@@ -1,6 +1,7 @@
 #ifndef SEARCHENGINE_H
 #define SEARCHENGINE_H
 
+#include "Configures.h"
 #include "Individual.h"
 #include "IndividuoBuilder.h"
 #include "Parser.h"
@@ -11,6 +12,7 @@
 class SearchEngine
 {
     public:
+        Configures * conf;
         Individual ** population;
         IndividuoBuilder * individuoBuilder;
         Parser * parser;
@@ -20,6 +22,10 @@ class SearchEngine
 
 
         SearchEngine();
+
+        void Operate();
+        void Replace();
+        void Evolve();
         virtual ~SearchEngine();
 
     protected:
