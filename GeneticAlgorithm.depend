@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1493228054 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/main.cpp
+1493228189 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/main.cpp
 	<iostream>
 	"SearchEngine.h"
 	"Configures.h"
@@ -7,12 +7,15 @@
 1493225343 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/Individual.cpp
 	"Individual.h"
 
-1493225747 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/Individual.h
+1493228546 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/Individual.h
+	<string>
+	"Individual.h"
 
 1493225492 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/IndividuoBuilder.cpp
 	"IndividuoBuilder.h"
 
-1493225492 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/IndividuoBuilder.h
+1493228559 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/IndividuoBuilder.h
+	"Individual.h"
 
 1493225521 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/Parser.cpp
 	"Parser.h"
@@ -21,7 +24,7 @@
 	<string>
 	"Individual.h"
 
-1493227936 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SearchEngine.cpp
+1493228099 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SearchEngine.cpp
 	"SearchEngine.h"
 
 1493228067 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SearchEngine.h
