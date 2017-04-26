@@ -4,14 +4,12 @@
 #include <string>
 #include "Individual.h"
 
-using namespace std;
-
 class Parser
 {
     public:
         Parser();
 
-        virtual double Evaluate(Individual* s) = 0;
+	    virtual double Evaluate(Individual* s) = 0;
         virtual string nameParser() = 0;
 
         virtual ~Parser();

@@ -1,7 +1,7 @@
 #ifndef INDIVIDUAL_H
 #define INDIVIDUAL_H
 #include <string>
-
+#include "Configures.h"
 #include "Individual.h"
 
 using namespace std;

@@ -9,3 +9,5 @@ Configures::~Configures()
 {
     //dtor
 }
+
+Configures * conf;

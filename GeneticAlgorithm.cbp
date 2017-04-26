@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="src" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="src" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -33,6 +37,38 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Configures.cpp" />
+		<Unit filename="src/Configures.h" />
+		<Unit filename="src/Crossover.cpp" />
+		<Unit filename="src/Crossover.h" />
+		<Unit filename="src/Database.cpp" />
+		<Unit filename="src/Database.h" />
+		<Unit filename="src/Individual.cpp" />
+		<Unit filename="src/Individual.h" />
+		<Unit filename="src/IndividualBuilder.cpp" />
+		<Unit filename="src/IndividualBuilder.h" />
+		<Unit filename="src/IndividualSelector.cpp" />
+		<Unit filename="src/IndividualSelector.h" />
+		<Unit filename="src/Mutation.cpp" />
+		<Unit filename="src/Mutation.h" />
+		<Unit filename="src/Parser.cpp" />
+		<Unit filename="src/Parser.h" />
+		<Unit filename="src/PopulationReplacement.cpp" />
+		<Unit filename="src/PopulationReplacement.h" />
+		<Unit filename="src/SearchEngine.cpp" />
+		<Unit filename="src/SearchEngine.h" />
+		<Unit filename="src/SimpleIndividualSelector.cpp" />
+		<Unit filename="src/SimpleIndividualSelector.h" />
+		<Unit filename="src/SimpleMutation.cpp" />
+		<Unit filename="src/SimpleMutation.h" />
+		<Unit filename="src/SimpleReplacement.cpp" />
+		<Unit filename="src/SimpleReplacement.h" />
+		<Unit filename="src/TravelingThiefIndividual.cpp" />
+		<Unit filename="src/TravelingThiefIndividual.h" />
+		<Unit filename="src/TravelingThiefIndividualBuilder.cpp" />
+		<Unit filename="src/TravelingThiefIndividualBuilder.h" />
+		<Unit filename="src/TravelingThiefParser.cpp" />
+		<Unit filename="src/TravelingThiefParser.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

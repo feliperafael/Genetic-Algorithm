@@ -3,7 +3,7 @@
 
 #include "Configures.h"
 #include "Individual.h"
-#include "IndividuoBuilder.h"
+#include "IndividualBuilder.h"
 #include "Parser.h"
 #include "PopulationReplacement.h"
 #include "Mutation.h"
@@ -14,7 +14,7 @@ class SearchEngine
     public:
         Configures * conf;
         Individual ** population;
-        IndividuoBuilder * individuoBuilder;
+        IndividualBuilder * individualBuilder;
         Parser * parser;
         PopulationReplacement * replacer;
         Mutation * mutationOperator;

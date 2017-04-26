@@ -9,6 +9,10 @@ class Configures
 
         int popSize;
         int generations;
+
+        int num_citys;
+        int max_itens;
+
         virtual ~Configures();
 
     protected:
@@ -16,6 +20,6 @@ class Configures
     private:
 };
 
-extern Configures* conf;
+extern Configures * conf;
 
 #endif // CONFIGURES_H
