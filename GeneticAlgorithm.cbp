@@ -41,6 +41,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/City.cpp" />
+		<Unit filename="include/City.h" />
+		<Unit filename="include/Item.cpp" />
+		<Unit filename="include/Item.h" />
 		<Unit filename="include/TravelingThiefDatabase.cpp" />
 		<Unit filename="include/TravelingThiefDatabase.h" />
 		<Unit filename="include/TravelingThiefIndividual.cpp" />

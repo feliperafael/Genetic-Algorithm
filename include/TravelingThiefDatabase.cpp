@@ -12,12 +12,10 @@ void TravelingThiefDatabase::loadBase(string base_name)
 
     inputFile.open(base_name.c_str());
 
-    this->variaveis = 2;
-    this->registros = 40;
-
     if(!inputFile.is_open())
     {
         cout << "Impossible to open input file, check file path : " << base_name.c_str() << endl;
+        exit(1);
     }
     else
     {
@@ -34,7 +32,6 @@ void TravelingThiefDatabase::loadBase(string base_name)
     }
 
     //Reading header
-
     string line = "";
     vector<string> line_vec;
 
@@ -71,22 +68,32 @@ void TravelingThiefDatabase::loadBase(string base_name)
 
     int index,x,y;
 
+    City* city;
+    //reader citys
     for(int i = 0; i < DIMENSION; ++i){
-//        getline(inputFile, line);
-//        cout << line << endl;
         inputFile >> index >> x  >> y;
-        //cout << i << " " << index << " " << x << " " << y << endl << endl << endl;
+        city = new City();
+        city->setObject(index - 1, x, y);
+        cities.push_back(city);
     }
 
     inputFile >> line  >> line >> line >> line >> line >> line >> line >> line;
 
-
     int INDEX, PROFIT, WEIGHT, ASSIGNED_NODE_NUMBER;
+    Item* item;
 
+    //reader itens
     for(int i = 0; i < NUMBER_OF_ITEMS; ++i){
         inputFile >> INDEX >> PROFIT >> WEIGHT >> ASSIGNED_NODE_NUMBER;
-        //cout << INDEX << " " << PROFIT << " " << WEIGHT << " " << ASSIGNED_NODE_NUMBER << endl;
+        item = new Item();
+        item->setObject(INDEX - 1, PROFIT, WEIGHT, ASSIGNED_NODE_NUMBER - 1);
+        cities.at(ASSIGNED_NODE_NUMBER - 1)->addItem(item);
     }
+
+    //cout << cities.size() << endl;
+
+    for(City * city : cities)
+        city->print();
 
     inputFile.close();
 

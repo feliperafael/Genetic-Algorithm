@@ -11,7 +11,7 @@ class Configures
         double elitism;
         int generations;
         double crossover;
-        int MAX_T = 1;
+        int MAX_T;
 
         int num_citys;
         int max_itens;

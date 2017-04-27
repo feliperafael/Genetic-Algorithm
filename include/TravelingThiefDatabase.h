@@ -1,15 +1,16 @@
 #ifndef TRAVELINGTHIEFDATABASE_H
 #define TRAVELINGTHIEFDATABASE_H
-#include "Database.h"
 #include <stdio.h>
 #include <string.h>
 #include <vector>
 #include <algorithm>
 #include <cctype>
 
+#include "Database.h"
+#include "City.h"
+#include "Item.h"
+
 using namespace std;
-
-
 
 class TravelingThiefDatabase : public Database
 {
@@ -25,13 +26,9 @@ class TravelingThiefDatabase : public Database
         double RENTING_RATIO;
         string EDGE_WEIGHT_TYPE;
 
-        double **values;
-        int registros;
-        int variaveis;
-
+        vector<City*> cities;
 
         void loadBase(string base_name);
-        double* getRegister(int position){}
 
         void print(){}
         void printInstanceHeader();

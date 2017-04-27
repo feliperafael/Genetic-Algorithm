@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1493323048 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/main.cpp
+1493327377 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -83,7 +83,7 @@
 	<string>
 	<fstream>
 
-1493296138 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/Configures.h
+1493332785 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/Configures.h
 
 1493243484 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/Configures.cpp
 	"Configures.h"
@@ -180,13 +180,16 @@
 	"Parser.h"
 	"SimpleIndividual.h"
 
-1493300973 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
+1493333745 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
 	"TravelingThiefIndividual.h"
 
-1493310879 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefIndividual.h
-	"Individual.h"
+1493333818 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefIndividual.h
 	<iostream>
 	<stdlib.h>
+	<vector>
+	"Individual.h"
+	"City.h"
+	"Item.h"
 
 1493239231 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.cpp
 	"TravelingThiefIndividualBuilder.h"
@@ -200,14 +203,30 @@
 1493239125 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefParser.h
 	"Individual.h"
 
-1493324460 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefDatabase.cpp
+1493333430 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefDatabase.cpp
 	"TravelingThiefDatabase.h"
 
-1493322893 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefDatabase.h
-	"Database.h"
+1493333272 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/TravelingThiefDatabase.h
 	<stdio.h>
 	<string.h>
 	<vector>
 	<algorithm>
 	<cctype>
+	"Database.h"
+	"City.h"
+	"Item.h"
+
+1493333031 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/City.cpp
+	"City.h"
+
+1493327447 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/City.h
+	<vector>
+	<iostream>
+	"Item.h"
+
+1493327484 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/Item.h
+	<iostream>
+
+1493327322 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/include/Item.cpp
+	"Item.h"
 

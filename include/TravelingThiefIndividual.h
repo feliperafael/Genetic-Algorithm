@@ -1,16 +1,21 @@
 #ifndef TRAVELINGTHIEFINDIVIDUAL_H
 #define TRAVELINGTHIEFINDIVIDUAL_H
 
-#include "Individual.h"
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
+#include <vector>
+#include "Individual.h"
+#include "City.h"
+#include "Item.h"
+
 
 using namespace std;
 
 class TravelingThiefIndividual : public Individual
 {
     public:
-        int **cityBackpack;
+        vector<City*> cities;
+        vector<Item*> items;
         TravelingThiefIndividual();
 
 
