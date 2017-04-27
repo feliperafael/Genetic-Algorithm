@@ -14,6 +14,8 @@
 #include "SimpleMutation.h"
 #include "SimpleCrossover.h"
 #include "SimpleIndividualSelector.h"
+#include "SimpleParser.h"
+#include "SimpleReplacement.h"
 
 class SearchEngine
 {

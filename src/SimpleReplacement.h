@@ -2,6 +2,7 @@
 #define SIMPLEREPLACEMENT_H
 
 #include "PopulationReplacement.h"
+#include <algorithm>    // std::sort
 
 class SimpleReplacement : public PopulationReplacement
 {
@@ -19,6 +20,7 @@ class SimpleReplacement : public PopulationReplacement
     protected:
 
     private:
+       static bool SortMyPop(Individual* a, Individual* b);
 };
 
 #endif // SIMPLEREPLACEMENT_H

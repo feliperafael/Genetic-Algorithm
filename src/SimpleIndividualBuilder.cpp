@@ -6,7 +6,7 @@ SimpleIndividualBuilder::SimpleIndividualBuilder()
 }
 
 Individual * SimpleIndividualBuilder::generateIndividuo(){
-
+    return new SimpleIndividual();
 }
 string SimpleIndividualBuilder::nameIndividuo(){
 

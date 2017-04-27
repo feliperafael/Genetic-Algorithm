@@ -71,12 +71,6 @@
 		<Unit filename="src/SimpleParser.h" />
 		<Unit filename="src/SimpleReplacement.cpp" />
 		<Unit filename="src/SimpleReplacement.h" />
-		<Unit filename="src/TravelingThiefIndividual.cpp" />
-		<Unit filename="src/TravelingThiefIndividual.h" />
-		<Unit filename="src/TravelingThiefIndividualBuilder.cpp" />
-		<Unit filename="src/TravelingThiefIndividualBuilder.h" />
-		<Unit filename="src/TravelingThiefParser.cpp" />
-		<Unit filename="src/TravelingThiefParser.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -8,6 +8,7 @@ class Configures
         Configures();
 
         int popSize;
+        double elitism;
         int generations;
 
         int num_citys;

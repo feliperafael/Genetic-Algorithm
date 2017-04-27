@@ -2,6 +2,7 @@
 #define SIMPLEINDIVIDUALBUILDER_H
 
 #include "IndividualBuilder.h"
+#include "SimpleIndividual.h"
 
 class SimpleIndividualBuilder : public IndividualBuilder
 {

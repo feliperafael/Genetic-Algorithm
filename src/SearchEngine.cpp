@@ -2,7 +2,12 @@
 
 SearchEngine::SearchEngine()
 {
-    //ctor
+    setParser(NULL);
+    setPopulationReplace(NULL);
+    setIndividualBuilder(NULL);
+    setMutation(NULL);
+    setCrossover(NULL);
+    setSelection(NULL);
 }
 
 void SearchEngine::Evolve()
@@ -86,7 +91,9 @@ void  SearchEngine::Operate()
     return a->fitness < b->fitness;
  }
 
- /***/
+ /**
+    Set functions
+ **/
 
  void SearchEngine::setIndividualBuilder(IndividualBuilder * indBuilder){
     if(indBuilder == NULL){
@@ -117,6 +124,24 @@ void SearchEngine::setSelection(IndividualSelector * seletor){
         this->individualSelector = new SimpleIndividualSelector();
     }else{
         this->individualSelector = seletor;
+    }
+}
+
+void SearchEngine::setParser(Parser * parser){
+  if(parser==NULL){
+        SimpleParser * avaliador  = new SimpleParser();
+        //avaliador->setDataSet(data->training,data->totalTraining);
+        this->parser = avaliador;
+    }else{
+        this->parser = parser;
+    }
+}
+
+void SearchEngine::setPopulationReplace(PopulationReplacement * popReplace){
+    if(popReplace == NULL){
+        this->replacer = new SimpleReplacement();
+    }else{
+        this->replacer = popReplace;
     }
 }
 
