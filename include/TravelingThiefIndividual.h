@@ -3,6 +3,7 @@
 
 #include "Individual.h"
 #include <iostream>
+#include <stdlib.h>     /* srand, rand */
 
 using namespace std;
 

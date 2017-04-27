@@ -1,8 +1,10 @@
 #ifndef SIMPLECROSSOVER_H
 #define SIMPLECROSSOVER_H
+#include <stdlib.h>     /* srand, rand */
 
 #include "Crossover.h"
 #include "SimpleIndividual.h"
+
 
 class SimpleCrossover : public Crossover
 {

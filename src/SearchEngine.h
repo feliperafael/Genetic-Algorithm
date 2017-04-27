@@ -20,7 +20,6 @@
 class SearchEngine
 {
     public:
-        Configures * conf;
         Individual ** population;
         IndividualBuilder * individualBuilder;
         Parser * parser;

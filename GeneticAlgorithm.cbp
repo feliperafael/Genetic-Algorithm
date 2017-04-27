@@ -5,13 +5,17 @@
 		<Option title="GeneticAlgorithm" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="default_src/;default_headers/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/GeneticAlgorithm" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="input/a280-ttp/a280_n279_bounded-strongly-corr_01.ttp" />
 				<Compiler>
+					<Add option="-O3" />
+					<Add option="-std=c++14" />
 					<Add option="-g" />
 					<Add directory="src" />
 					<Add directory="include" />
@@ -22,6 +26,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="input/a280-ttp/a280_n279_bounded-strongly-corr_01.ttp" />
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="src" />
@@ -36,6 +41,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/TravelingThiefDatabase.cpp" />
+		<Unit filename="include/TravelingThiefDatabase.h" />
+		<Unit filename="include/TravelingThiefIndividual.cpp" />
+		<Unit filename="include/TravelingThiefIndividual.h" />
+		<Unit filename="include/TravelingThiefIndividualBuilder.cpp" />
+		<Unit filename="include/TravelingThiefIndividualBuilder.h" />
+		<Unit filename="include/TravelingThiefParser.cpp" />
+		<Unit filename="include/TravelingThiefParser.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Configures.cpp" />
 		<Unit filename="src/Configures.h" />
@@ -57,20 +70,48 @@
 		<Unit filename="src/PopulationReplacement.h" />
 		<Unit filename="src/SearchEngine.cpp" />
 		<Unit filename="src/SearchEngine.h" />
-		<Unit filename="src/SimpleCrossover.cpp" />
-		<Unit filename="src/SimpleCrossover.h" />
-		<Unit filename="src/SimpleIndividual.cpp" />
-		<Unit filename="src/SimpleIndividual.h" />
-		<Unit filename="src/SimpleIndividualBuilder.cpp" />
-		<Unit filename="src/SimpleIndividualBuilder.h" />
-		<Unit filename="src/SimpleIndividualSelector.cpp" />
-		<Unit filename="src/SimpleIndividualSelector.h" />
-		<Unit filename="src/SimpleMutation.cpp" />
-		<Unit filename="src/SimpleMutation.h" />
-		<Unit filename="src/SimpleParser.cpp" />
-		<Unit filename="src/SimpleParser.h" />
-		<Unit filename="src/SimpleReplacement.cpp" />
-		<Unit filename="src/SimpleReplacement.h" />
+		<Unit filename="src/SimpleCrossover.cpp">
+			<Option virtualFolder="default_src/" />
+		</Unit>
+		<Unit filename="src/SimpleCrossover.h">
+			<Option virtualFolder="default_headers/" />
+		</Unit>
+		<Unit filename="src/SimpleIndividual.cpp">
+			<Option virtualFolder="default_src/" />
+		</Unit>
+		<Unit filename="src/SimpleIndividual.h">
+			<Option virtualFolder="default_headers/" />
+		</Unit>
+		<Unit filename="src/SimpleIndividualBuilder.cpp">
+			<Option virtualFolder="default_src/" />
+		</Unit>
+		<Unit filename="src/SimpleIndividualBuilder.h">
+			<Option virtualFolder="default_headers/" />
+		</Unit>
+		<Unit filename="src/SimpleIndividualSelector.cpp">
+			<Option virtualFolder="default_src/" />
+		</Unit>
+		<Unit filename="src/SimpleIndividualSelector.h">
+			<Option virtualFolder="default_headers/" />
+		</Unit>
+		<Unit filename="src/SimpleMutation.cpp">
+			<Option virtualFolder="default_src/" />
+		</Unit>
+		<Unit filename="src/SimpleMutation.h">
+			<Option virtualFolder="default_headers/" />
+		</Unit>
+		<Unit filename="src/SimpleParser.cpp">
+			<Option virtualFolder="default_src/" />
+		</Unit>
+		<Unit filename="src/SimpleParser.h">
+			<Option virtualFolder="default_headers/" />
+		</Unit>
+		<Unit filename="src/SimpleReplacement.cpp">
+			<Option virtualFolder="default_src/" />
+		</Unit>
+		<Unit filename="src/SimpleReplacement.h">
+			<Option virtualFolder="default_headers/" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -1,11 +1,16 @@
 #ifndef SIMPLEINDIVIDUAL_H
 #define SIMPLEINDIVIDUAL_H
+#include <iostream>
+#include <stdlib.h>     /* srand, rand */
 #include "Individual.h"
+
+using namespace std;
 
 class SimpleIndividual : public Individual
 {
     public:
-        int * vec;
+        double x;
+        bool a;
         SimpleIndividual();
 
         virtual string nameIndividual(); // print name of individual

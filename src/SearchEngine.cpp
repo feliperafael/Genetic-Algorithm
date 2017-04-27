@@ -18,6 +18,7 @@ void SearchEngine::Evolve()
     //initial population evaluation
     EvaluatePopulation(0, conf->popSize);
 
+
     for(int it = 1; it < conf->generations; it++)
     {
 
@@ -38,18 +39,27 @@ void SearchEngine::Evolve()
 
     }
 
+    population[0]->print();
+
 }
 
 void SearchEngine::createsInitialPopulation()
 {
+   // cout << "popsize : " << conf->popSize << endl;
     //Creates the initial population
+    population = new Individual*[conf->popSize * 2];
+
+    for(int i = 0; i < conf->popSize; i++){
+        population[i] = individualBuilder->generateIndividuo();
+        //population[i]->print();
+    }
 
 
 }
 
 void SearchEngine::EvaluatePopulation(int initialIndex, int finalIndex)
 {
-
+    #pragma omp parallel for num_threads(conf->MAX_T)
     for(int i = initialIndex; i < finalIndex; i++){
         population[i]->fitness = parser->Evaluate(population[i]);
     }
@@ -130,7 +140,7 @@ void SearchEngine::setSelection(IndividualSelector * seletor){
 void SearchEngine::setParser(Parser * parser){
   if(parser==NULL){
         SimpleParser * avaliador  = new SimpleParser();
-        //avaliador->setDataSet(data->training,data->totalTraining);
+       // avaliador->setDataSet(database);
         this->parser = avaliador;
     }else{
         this->parser = parser;
