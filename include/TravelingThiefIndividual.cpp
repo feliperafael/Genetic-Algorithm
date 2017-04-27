@@ -2,12 +2,12 @@
 
 TravelingThiefIndividual::TravelingThiefIndividual()
 {
+    //Allocates the matrix representing the individual
     cityBackpack = new int*[conf->num_citys];
-
     for(int i = 0; i < conf->num_citys; i++){
         cityBackpack[i] = new int[conf->max_itens];
     }
-    //ctor
+
 }
 
 string TravelingThiefIndividual::nameIndividual(){
@@ -31,5 +31,9 @@ void TravelingThiefIndividual::print(){
 
 TravelingThiefIndividual::~TravelingThiefIndividual()
 {
-    //dtor
+    //Deallocates the matrix representing the individual
+    for(int i = 0; i < conf->num_citys; i++){
+        delete cityBackpack[i];
+    }
+    delete cityBackpack;
 }

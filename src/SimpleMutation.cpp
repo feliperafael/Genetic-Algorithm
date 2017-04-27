@@ -6,7 +6,8 @@ SimpleMutation::SimpleMutation()
 }
 
 void SimpleMutation::mutate(Individual * individuo){
-    //converter para TravelingThiefIndividual
+    //receber diretamente um simpleIndividual??
+    SimpleIndividual * s1 = dynamic_cast<SimpleIndividual*>(individuo);
 
 }
 

@@ -3,6 +3,7 @@
 
 #include "Mutation.h"
 #include "Individual.h"
+#include "SimpleIndividual.h"
 
 class SimpleMutation : public Mutation
 {

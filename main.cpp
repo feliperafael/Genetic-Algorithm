@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 #include "SearchEngine.h"
 #include "Configures.h"
 using namespace std;

@@ -1,6 +1,8 @@
 # depslib dependency file v1.0
-1493243466 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/main.cpp
+1493265633 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/main.cpp
 	<iostream>
+	<stdlib.h>
+	<time.h>
 	"SearchEngine.h"
 	"Configures.h"
 
@@ -25,17 +27,23 @@
 	<string>
 	"Individual.h"
 
-1493228099 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SearchEngine.cpp
+1493266744 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SearchEngine.cpp
 	"SearchEngine.h"
 
-1493234811 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SearchEngine.h
+1493266726 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SearchEngine.h
 	"Configures.h"
 	"Individual.h"
 	"IndividualBuilder.h"
+	"IndividualSelector.h"
 	"Parser.h"
 	"PopulationReplacement.h"
 	"Mutation.h"
 	"Crossover.h"
+	"SimpleIndividual.h"
+	"SimpleIndividualBuilder.h"
+	"SimpleMutation.h"
+	"SimpleCrossover.h"
+	"SimpleIndividualSelector.h"
 
 1493226212 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/IndividualSelector.cpp
 	"IndividualSelector.h"
@@ -90,12 +98,13 @@
 1493234970 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/IndividualTravelingThiefBuilder.h
 	"IndividualBuilder.h"
 
-1493235332 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleMutation.cpp
+1493267253 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleMutation.cpp
 	"SimpleMutation.h"
 
-1493235177 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleMutation.h
+1493267286 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleMutation.h
 	"Mutation.h"
 	"Individual.h"
+	"SimpleIndividual.h"
 
 1493235563 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleReplacement.cpp
 	"SimpleReplacement.h"
@@ -109,11 +118,12 @@
 1493239125 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/TravelingThiefParser.h
 	"Individual.h"
 
-1493243247 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/TravelingThiefIndividual.cpp
+1493251665 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/TravelingThiefIndividual.cpp
 	"TravelingThiefIndividual.h"
 
-1493235710 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/TravelingThiefIndividual.h
+1493243660 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/TravelingThiefIndividual.h
 	"Individual.h"
+	<iostream>
 
 1493239231 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/TravelingThiefIndividualBuilder.cpp
 	"TravelingThiefIndividualBuilder.h"
@@ -121,9 +131,35 @@
 1493235816 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/TravelingThiefIndividualBuilder.h
 	"IndividualBuilder.h"
 
-1493236166 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividualSelector.cpp
+1493265579 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividualSelector.cpp
 	"SimpleIndividualSelector.h"
 
-1493236218 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividualSelector.h
+1493265652 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividualSelector.h
+	<stdlib.h>
+	<time.h>
 	"IndividualSelector.h"
+
+1493266928 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividual.h
+
+1493266269 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividualBuilder.h
+	"IndividualBuilder.h"
+
+1493267436 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleCrossover.h
+	"Crossover.h"
+	"SimpleIndividual.h"
+
+1493266132 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividual.cpp
+	"SimpleIndividual.h"
+
+1493266302 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleIndividualBuilder.cpp
+	"SimpleIndividualBuilder.h"
+
+1493267488 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleCrossover.cpp
+	"SimpleCrossover.h"
+
+1493267066 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleParser.cpp
+	"SimpleParser.h"
+
+1493267024 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/src/SimpleParser.h
+	"Parser.h"
 
