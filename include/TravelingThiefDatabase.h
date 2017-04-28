@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cctype>
 
+#include "Configures.h"
 #include "Database.h"
 #include "City.h"
 #include "Item.h"

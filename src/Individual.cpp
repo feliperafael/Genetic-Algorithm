@@ -2,6 +2,7 @@
 
 Individual::Individual()
 {
+    //fitness = 0;
     //ctor
 }
 

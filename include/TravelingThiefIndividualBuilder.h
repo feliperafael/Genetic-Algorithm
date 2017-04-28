@@ -1,11 +1,15 @@
 #ifndef TRAVELINGTHIEFBUILDERINDIVIDUAL_H
 #define TRAVELINGTHIEFBUILDERINDIVIDUAL_H
 #include "IndividualBuilder.h"
+#include "TravelingThiefIndividual.h"
+#include "TravelingThiefDatabase.h"
+#include "Database.h"
 
 class TravelingThiefIndividualBuilder : public IndividualBuilder
 {
     public:
-        TravelingThiefIndividualBuilder();
+        TravelingThiefDatabase * database;
+        TravelingThiefIndividualBuilder(Database * database);
 
         Individual * generateIndividuo();
         string nameIndividuo();

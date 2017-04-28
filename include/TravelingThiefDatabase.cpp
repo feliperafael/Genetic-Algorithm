@@ -64,6 +64,13 @@ void TravelingThiefDatabase::loadBase(string base_name)
 
     inputFile >> line  >> line >> line >> line;
 
+
+    conf->DIMENSION = DIMENSION;
+    conf->NUMBER_OF_ITEMS = NUMBER_OF_ITEMS;
+    conf->CAPACITY_OF_KNAPSACK = CAPACITY_OF_KNAPSACK;
+    conf->MIN_SPEED = MIN_SPEED;
+    conf->MAX_SPEED = MAX_SPEED;
+    conf->RENTING_RATIO = RENTING_RATIO;
 //    printInstanceHeader();
 
     int index,x,y;
@@ -92,8 +99,9 @@ void TravelingThiefDatabase::loadBase(string base_name)
 
     //cout << cities.size() << endl;
 
-    for(City * city : cities)
-        city->print();
+//    for(City * city : cities)
+//        city->print();
+
 
     inputFile.close();
 

@@ -15,7 +15,7 @@ void SearchEngine::Evolve()
 
     createsInitialPopulation();
 
-    //initial population evaluation
+    //initial population evaluation. Mutation and crossing
     EvaluatePopulation(0, conf->popSize);
 
 
@@ -39,6 +39,7 @@ void SearchEngine::Evolve()
 
     }
 
+    //Prints the best result in n generations
     population[0]->print();
 
 }
@@ -51,18 +52,22 @@ void SearchEngine::createsInitialPopulation()
 
     for(int i = 0; i < conf->popSize; i++){
         population[i] = individualBuilder->generateIndividuo();
-        //population[i]->print();
     }
-
 
 }
 
 void SearchEngine::EvaluatePopulation(int initialIndex, int finalIndex)
 {
-    #pragma omp parallel for num_threads(conf->MAX_T)
-    for(int i = initialIndex; i < finalIndex; i++){
+    //cout << "EvaluatePopulation" << endl;
+    for(int i = initialIndex; i < finalIndex; ++i){
+//        cout << i << " - ";
+//        cout << parser->nameParser() << endl;
         population[i]->fitness = parser->Evaluate(population[i]);
+//        cout << population[i]->fitness << endl;
+//        cin.get();
     }
+
+
 }
 
 void  SearchEngine::Operate()
