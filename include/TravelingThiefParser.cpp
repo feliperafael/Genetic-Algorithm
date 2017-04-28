@@ -24,6 +24,8 @@ double TravelingThiefParser::Evaluate(Individual* s)
         }
 
     }
+//    cout << time << endl;
+//    cin.get();
     /// Change the profit name to anything related to value items
     return s1->fitness = profit - database->RENTING_RATIO * time;
 }
@@ -59,7 +61,7 @@ double TravelingThiefParser::calculateDistance(City * a, City * b){
 
 /** Calculates the travel time between two cities **/
 double TravelingThiefParser::calculateTime(double distance, double speed){
-    return speed/distance;
+    return distance/speed;
 }
 
 string TravelingThiefParser::nameParser()

@@ -65,12 +65,16 @@ void TravelingThiefIndividual::buildKsnapsack(TravelingThiefDatabase * database)
         for(int j = 0; j < itemSize; ++j) {
             for(Item * item : c->items) {
                 if(knapsackAcceptsItem(item)) {
-                    this->knapsack.push_back(item);
-                    this->weightKnapsack += item->weight;
+                    addOnKnapsack(item);
                 }
             }
         }
     }
+}
+
+void TravelingThiefIndividual::addOnKnapsack(Item *item){
+    knapsack.push_back(item);
+    this->weightKnapsack += (item)->weight;
 }
 
 bool TravelingThiefIndividual::knapsackAcceptsItem(Item * item) {
@@ -90,5 +94,22 @@ void TravelingThiefIndividual::print() {
 
 
 TravelingThiefIndividual::~TravelingThiefIndividual() {
+
+    for(int i = 0; i < amountOfCity; i++)
+    {
+        cities[i] = NULL;
+        delete cities[i];
+    }
+
+
+    // clear knapsack haha
+
+//   Item * itemAux;
+//    for(vector<Item*>::iterator it = knapsack.begin(); it != knapsack.end(); ++it) {
+//        itemAux = *it;
+//        delete itemAux;
+//    }
+//    knapsack.clear();
+//    knapsack.shrink_to_fit();
 
 }

@@ -28,7 +28,6 @@
 				<Option compiler="gcc" />
 				<Option parameters="input/eil51-ttp/eil51_n50_bounded-strongly-corr_01.ttp" />
 				<Compiler>
-					<Add option="-O3" />
 					<Add option="-std=c++11" />
 					<Add directory="src" />
 					<Add directory="include" />

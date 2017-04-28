@@ -35,10 +35,12 @@ class TravelingThiefIndividual : public Individual
         void buildKsnapsack(TravelingThiefDatabase * database);
         bool knapsackAcceptsItem(Item * item);
 
+        void addOnKnapsack(Item *item);
 
     protected:
 
     private:
+
 };
 
 #endif // TRAVELINGTHIEFINDIVIDUAL_H

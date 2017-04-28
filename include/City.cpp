@@ -38,5 +38,11 @@ void City::print(){
 
 City::~City()
 {
-    //dtor
+    Item * itemAux;
+    for(vector<Item*>::iterator it = items.begin(); it != items.end(); ++it) {
+        itemAux = *it;
+        delete itemAux;
+    }
+    items.clear();
+    items.shrink_to_fit();
 }

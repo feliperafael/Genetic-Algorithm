@@ -12,16 +12,20 @@
 #include "TravelingThiefIndividual.h"
 #include "TravelingThiefIndividualBuilder.h"
 #include "TravelingThiefParser.h"
+
+
 using namespace std;
 
 int main(int argc, char * argv[])
 {
+
+
     srand(time(NULL));
 
     conf = new Configures(); //Configuration class with several GA parameters
     conf->elitism = 0.1; // elitism percentage
-    conf->generations = 1000; // num_max of generations
-    conf->popSize = 10; // size of population
+    conf->generations = 100; // num_max of generations
+    conf->popSize = 1000; // size of population
     conf->crossover = 0.5;  //crossing percentage
     conf->MAX_THREADS = omp_get_max_threads(); // num_max_threads omp
 

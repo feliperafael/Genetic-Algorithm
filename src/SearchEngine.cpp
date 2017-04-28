@@ -30,7 +30,6 @@ void SearchEngine::Evolve()
 
         //Replaces the population
         replacer->Replace(population);
-
         // free temporary population
         for(int i = conf->popSize; i < conf->popSize * 2; i++)
         {
