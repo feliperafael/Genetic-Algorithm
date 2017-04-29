@@ -12,6 +12,7 @@ class City
     public:
         int index, x, y;
         vector<Item*> items;
+        double costBenefit;
 
         City();
         void setObject(int index, int x, int y);
@@ -19,6 +20,7 @@ class City
         void setX(int x);
         void setY(int y);
         void addItem(Item * item);
+        double getCostBenefit();
         void print();
         virtual ~City();
 

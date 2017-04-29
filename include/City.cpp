@@ -27,6 +27,13 @@ void City::addItem(Item * item){
     items.push_back(item);
 }
 
+double City::getCostBenefit(){
+    double costBenefit = 0;
+    for(Item * item : items)
+        costBenefit+= item->getCostBenefit();
+    return costBenefit;
+}
+
 void City::print(){
     cout << "(" << index << ", " << x << ", " << y << ")" << endl;
     cout << "(" << index << ", " << x << ", " << y << ") = " << items.size() << endl;

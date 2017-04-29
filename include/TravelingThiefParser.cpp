@@ -15,7 +15,7 @@ double TravelingThiefParser::Evaluate(Individual* s)
 {
     TravelingThiefIndividual * s1 = dynamic_cast<TravelingThiefIndividual*>(s);
 
-    double time = 0, profit = 0, speed, distance;
+    double time = 0, profit = 0, speed = 0, distance = 0;
     s1->weightKnapsack = 0;
     for(int i = 1; i < s1->amountOfCity; ++i){
         distance = calculateDistance(s1->cities[i], s1->cities[i - 1]);
@@ -25,8 +25,12 @@ double TravelingThiefParser::Evaluate(Individual* s)
         for(Item* item : s1->knapsack[i]){
             s1->weightKnapsack += item->weight;
             profit += item->profit;
+            //cout <<  s1->weightKnapsack <<" - " << profit << endl;cin.get();
         }
     }
+//    if(profit - database->RENTING_RATIO * time > 2000){
+//        cout << profit << " - " << database->RENTING_RATIO << " * " << time << endl; cin.get();
+//    }
 
     /// Change the profit name to anything related to value items
     return s1->fitness = profit - database->RENTING_RATIO * time;

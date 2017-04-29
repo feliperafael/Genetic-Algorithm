@@ -17,6 +17,7 @@ class Item
         void setProfit(double Profit);
         void setWeight(double weight);
         void setCity(int city);
+        double getCostBenefit();
         void print();
         virtual ~Item();
 

@@ -37,6 +37,11 @@ class TravelingThiefIndividual : public Individual
 
         void addOnKnapsack(Item *item);
 
+        void buildRouteOfLeastPath(TravelingThiefDatabase * database);
+        static bool SortCitiesByDistanceCost(City* a, City* b);
+        double calculateDistance(City * a, City * b);
+
+
     protected:
 
     private:

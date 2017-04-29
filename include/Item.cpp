@@ -28,6 +28,10 @@ void Item::setCity(int city){
     this->city = city;
 }
 
+double Item::getCostBenefit(){
+    return profit/weight;
+}
+
 void Item::print(){
     cout << "[" << index << ", " << profit << ", " << weight << ", " << city << "]" << endl;
 }

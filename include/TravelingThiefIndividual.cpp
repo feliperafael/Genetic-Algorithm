@@ -103,23 +103,50 @@ void TravelingThiefIndividual::print() {
     cout << endl;
 }
 
+void TravelingThiefIndividual::buildRouteOfLeastPath(TravelingThiefDatabase * database){
+
+     //City** c;//Vector of pointers to cities
+    weightKnapsack = 0;
+    amountOfCity = database->DIMENSION;
+
+    cities = new City*[amountOfCity ];
+
+    for(int i = 0; i < amountOfCity ; ++i) {
+        cities[i] = database->cities.at(i);
+    }
+
+    // shuffles the vector
+    std::sort( cities + 1, cities+amountOfCity, SortCitiesByDistanceCost ); //first and last cities should not be modified
+
+    for(int i = 0; i < amountOfCity ; ++i) {
+        for(int j = i; j < amountOfCity -1; j++){
+             if(calculateDistance(cities[i], cities[j])/cities[j]->getCostBenefit() > calculateDistance(cities[i], cities[j+1])/cities[j+1]->getCostBenefit()){
+                if(rand()%100 < 95)
+                    swap(cities[j],cities[j+1]);
+             }
+        }
+
+    }
+    buildKsnapsack(database);
+}
+/** Calculates the Euclidean distance between two cities **/
+double TravelingThiefIndividual::calculateDistance(City * a, City * b){
+    return sqrt(pow(a->x - b->x,2) + pow(a->y - b->y,2));
+}
+
+bool TravelingThiefIndividual::SortCitiesByDistanceCost(City* a, City* b){
+    if(a->getCostBenefit() > b->getCostBenefit())
+        return true;
+    return false;
+ }
+
 
 TravelingThiefIndividual::~TravelingThiefIndividual() {
     delete [] cities;
     for(int i = 0; i < amountOfCity; i++){
         knapsack[i].clear();
+        knapsack[i].shrink_to_fit();
     }
+
     delete [] knapsack;
-
-
-    // clear knapsack haha
-
-//   Item * itemAux;
-//    for(vector<Item*>::iterator it = knapsack.begin(); it != knapsack.end(); ++it) {
-//        itemAux = *it;
-//        delete itemAux;
-//    }
-//    knapsack.clear();
-//    knapsack.shrink_to_fit();
-
 }

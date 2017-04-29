@@ -466,18 +466,18 @@
 	"TravelingThiefIndividual.h"
 	"Crossover.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/City.cpp
+1493495150 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/City.cpp
 	"City.h"
 
-1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/City.h
+1493495086 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/City.h
 	<vector>
 	<iostream>
 	"Item.h"
 
-1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/Item.h
+1493495012 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/Item.h
 	<iostream>
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/Item.cpp
+1493495039 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/Item.cpp
 	"Item.h"
 
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefCrossover.cpp
@@ -487,7 +487,7 @@
 	"TravelingThiefIndividual.h"
 	"Crossover.h"
 
-1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.h
+1493496378 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.h
 	<iostream>
 	<stdlib.h>
 	<vector>
@@ -526,13 +526,13 @@
 1493492330 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefDatabase.cpp
 	"TravelingThiefDatabase.h"
 
-1493489620 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
+1493496909 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
 	"TravelingThiefIndividual.h"
 
-1493489602 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.cpp
+1493497013 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.cpp
 	"TravelingThiefIndividualBuilder.h"
 
-1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.h
+1493493521 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.h
 	"IndividualBuilder.h"
 	"TravelingThiefIndividual.h"
 	"TravelingThiefDatabase.h"
@@ -541,7 +541,7 @@
 1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/IndividualBuilder.h
 	"Individual.h"
 
-1493492288 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.cpp
+1493493645 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.cpp
 	"TravelingThiefParser.h"
 
 1493491988 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.h
@@ -555,7 +555,7 @@
 	<string>
 	"Individual.h"
 
-1493490923 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/main.cpp
+1493494925 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
