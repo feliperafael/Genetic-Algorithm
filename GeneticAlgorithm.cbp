@@ -5,7 +5,7 @@
 		<Option title="GeneticAlgorithm" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="default_src/;default_headers/;" />
+		<Option virtualFolders="default_src/;default_headers/;include/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/GeneticAlgorithm" prefix_auto="1" extension_auto="1" />
@@ -45,12 +45,15 @@
 		<Unit filename="include/City.h" />
 		<Unit filename="include/Item.cpp" />
 		<Unit filename="include/Item.h" />
+		<Unit filename="include/TravelingThiefCrossover.cpp" />
+		<Unit filename="include/TravelingThiefCrossover.h" />
 		<Unit filename="include/TravelingThiefDatabase.cpp" />
 		<Unit filename="include/TravelingThiefDatabase.h" />
 		<Unit filename="include/TravelingThiefIndividual.cpp" />
 		<Unit filename="include/TravelingThiefIndividual.h" />
 		<Unit filename="include/TravelingThiefIndividualBuilder.cpp" />
 		<Unit filename="include/TravelingThiefIndividualBuilder.h" />
+		<Unit filename="include/TravelingThiefMutation.h" />
 		<Unit filename="include/TravelingThiefParser.cpp" />
 		<Unit filename="include/TravelingThiefParser.h" />
 		<Unit filename="main.cpp" />
@@ -115,6 +118,9 @@
 		</Unit>
 		<Unit filename="src/SimpleReplacement.h">
 			<Option virtualFolder="default_headers/" />
+		</Unit>
+		<Unit filename="src/TravelingThiefMutation.cpp">
+			<Option virtualFolder="include/" />
 		</Unit>
 		<Extensions>
 			<code_completion />

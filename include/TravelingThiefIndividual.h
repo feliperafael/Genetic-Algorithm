@@ -17,7 +17,7 @@ class TravelingThiefIndividual : public Individual
 {
     public:
         City ** cities;
-        vector<Item*> knapsack;
+        vector<Item*>* knapsack;
         int amountOfCity;
         double weightKnapsack;
 

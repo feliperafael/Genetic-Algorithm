@@ -128,7 +128,7 @@ const vector<string> TravelingThiefDatabase::explode(const string& s, const char
     string buff = "";
     vector<string> v;
 
-    for(n:s)
+    for(char n:s)
     {
         if(n != c) buff+=n;
         else if(n == c && buff != "")

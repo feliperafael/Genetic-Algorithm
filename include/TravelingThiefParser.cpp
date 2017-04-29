@@ -16,16 +16,12 @@ double TravelingThiefParser::Evaluate(Individual* s)
         speed = calculateSpeed(s1);
         time += calculateTime(distance, speed);
 
-        for( int j = 0; j < s1->knapsack.size(); ++j){
-             if(s1->knapsack.at(j)->city == s1->cities[i]->index){
-                s1->weightKnapsack += s1->knapsack.at(j)->weight;
-                profit += s1->knapsack.at(j)->profit;
-            }
+        for(Item* item : s1->knapsack[i]){
+            s1->weightKnapsack += item->weight;
+            profit += item->profit;
         }
-
     }
-//    cout << time << endl;
-//    cin.get();
+
     /// Change the profit name to anything related to value items
     return s1->fitness = profit - database->RENTING_RATIO * time;
 }
@@ -47,8 +43,10 @@ double TravelingThiefParser::calculateSpeed(TravelingThiefIndividual * s){
 
 double TravelingThiefParser::calculateProfit(TravelingThiefIndividual * s){
     double profit = 0;
-    for(Item* item : s->knapsack){
-        profit += item->profit;
+    for(int i = 0; i < s->amountOfCity; i++){
+        for(Item* item : s->knapsack[i]){
+            profit += item->profit;
+        }
     }
 
     return profit;

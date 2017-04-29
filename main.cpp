@@ -12,15 +12,15 @@
 #include "TravelingThiefIndividual.h"
 #include "TravelingThiefIndividualBuilder.h"
 #include "TravelingThiefParser.h"
+#include "TravelingThiefMutation.h"
 
 
 using namespace std;
 
 int main(int argc, char * argv[])
 {
-
-
     srand(time(NULL));
+//    srand(1015);
 
     conf = new Configures(); //Configuration class with several GA parameters
     conf->elitism = 0.1; // elitism percentage
@@ -47,6 +47,7 @@ int main(int argc, char * argv[])
     searcher->setParser(travelingthiefparser);
     searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
 
+    searcher->setMutation(new TravelingThiefMutation());
 
     searcher->Evolve();
 

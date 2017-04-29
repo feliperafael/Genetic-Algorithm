@@ -1,9 +1,11 @@
 #include "TravelingThiefIndividual.h"
 
 TravelingThiefIndividual::TravelingThiefIndividual(TravelingThiefDatabase *database) {
-    weightKnapsack = 0;
-    if(database !=NULL)
+    if(database != NULL)
         buildsRoute(database);
+
+//    print();
+//    cin.get();
 }
 
 string TravelingThiefIndividual::nameIndividual() {
@@ -13,27 +15,31 @@ Individual* TravelingThiefIndividual::clone() {
     TravelingThiefIndividual * i = new TravelingThiefIndividual(NULL);
     i->amountOfCity = amountOfCity;
     i->fitness = fitness;
-    i->knapsack = knapsack;
     i->weightKnapsack = weightKnapsack;
     i->cities = new City*[amountOfCity];
-    for(int k = 0; k < amountOfCity; ++k)
+    i->knapsack = new vector<Item*>[amountOfCity];
+    for(int k = 0; k < amountOfCity; ++k){
         i->cities[k] = cities[k];
+        for(Item* item : knapsack[k])
+            i->knapsack[k].push_back(item);
+    }
     return i;
 
 }
 
 void TravelingThiefIndividual::buildsRoute(TravelingThiefDatabase * database) {
-
     //City** c;//Vector of pointers to cities
-    this->amountOfCity = database->DIMENSION;
-    cities = new City*[database->DIMENSION];
+    weightKnapsack = 0;
+    amountOfCity = database->DIMENSION;
 
-    for(int i = 0; i < database->DIMENSION; ++i) {
+    cities = new City*[amountOfCity ];
+
+    for(int i = 0; i < amountOfCity ; ++i) {
         cities[i] = database->cities.at(i);
     }
 
     // shuffles the vector
-    std::random_shuffle ( cities + 1, cities+database->DIMENSION -1 ); //first and last cities should not be modified
+    std::random_shuffle ( cities + 1, cities+amountOfCity ); //first and last cities should not be modified
     buildKsnapsack(database);
 
 //    for(int i = 0; i < database->DIMENSION; ++i){
@@ -59,6 +65,8 @@ void TravelingThiefIndividual::buildKsnapsack(TravelingThiefDatabase * database)
     City *c;
     int itemSize = 0;
 
+    knapsack = new vector<Item*>[amountOfCity];
+
     for(int i = 0; i < database->DIMENSION; ++i) {
         c = cities[i];
         itemSize = c->items.size();
@@ -73,33 +81,35 @@ void TravelingThiefIndividual::buildKsnapsack(TravelingThiefDatabase * database)
 }
 
 void TravelingThiefIndividual::addOnKnapsack(Item *item){
-    knapsack.push_back(item);
-    this->weightKnapsack += (item)->weight;
+    knapsack[item->city].push_back(item);
+    this->weightKnapsack += item->weight;
 }
 
 bool TravelingThiefIndividual::knapsackAcceptsItem(Item * item) {
     if(this->weightKnapsack + item->weight < conf->CAPACITY_OF_KNAPSACK)
         return true;
-//    if(rand()%100 < 5){ //5% chance of accepting a non-viable solution
-//        return true;
-//    }
+
     return false;
 }
 
 void TravelingThiefIndividual::print() {
-    this->knapsack.size();
-    cout << fitness << ", " <<  this->knapsack.size() << ", " << weightKnapsack << endl;
-
+    cout << fitness << ", " << weightKnapsack << ", " << conf->CAPACITY_OF_KNAPSACK << endl;
+    for(int i = 0; i < amountOfCity; i++){
+        cout << cities[i]->index << " ";
+//        for(Item* item : knapsack[i])
+//            cout << item->index << " ";
+//        cout << endl;
+    }
+    cout << endl;
 }
 
 
 TravelingThiefIndividual::~TravelingThiefIndividual() {
-
-    for(int i = 0; i < amountOfCity; i++)
-    {
-        cities[i] = NULL;
-        delete cities[i];
+    delete [] cities;
+    for(int i = 0; i < amountOfCity; i++){
+        knapsack[i].clear();
     }
+    delete [] knapsack;
 
 
     // clear knapsack haha

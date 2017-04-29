@@ -21,7 +21,7 @@ void SimpleReplacement::Replace(Individual **pop){
 }
 
 bool SimpleReplacement::SortMyPop(Individual* a, Individual* b){
-            return a->fitness < b->fitness;
+            return a->fitness > b->fitness;
 }
 
 

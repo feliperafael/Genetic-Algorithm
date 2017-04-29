@@ -11,7 +11,7 @@ TravelingThiefIndividualBuilder::TravelingThiefIndividualBuilder(Database * data
 
 Individual * TravelingThiefIndividualBuilder::generateIndividuo(){
     TravelingThiefIndividual * i = new TravelingThiefIndividual(database);
-    i->buildsRoute(database);
+//    i->buildsRoute(database);
     return i;
 }
 

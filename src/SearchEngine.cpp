@@ -30,12 +30,12 @@ void SearchEngine::Evolve()
 
         //Replaces the population
         replacer->Replace(population);
+
         // free temporary population
         for(int i = conf->popSize; i < conf->popSize * 2; i++)
         {
             delete population[i];// passar para dentro do replace?
         }
-
     }
 
     //Prints the best result in n generations
@@ -102,7 +102,7 @@ void  SearchEngine::Operate()
 }
 
  bool SearchEngine::SortPopulationByFitness(Individual* a, Individual* b){
-    return a->fitness < b->fitness;
+    return a->fitness > b->fitness;
  }
 
  /**
