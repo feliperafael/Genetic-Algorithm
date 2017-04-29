@@ -2,6 +2,12 @@
 
 TravelingThiefParser::TravelingThiefParser()
 {
+    distanceCities = new double*[conf->DIMENSION];
+
+    for(int i = 0; i < conf->DIMENSION; ++i){
+        distanceCities[i] = new double[conf->DIMENSION];
+    }
+
     //ctor
 }
 
@@ -28,7 +34,8 @@ double TravelingThiefParser::Evaluate(Individual* s)
 
 void TravelingThiefParser::setDatabase(Database * data){
     this->database = dynamic_cast<TravelingThiefDatabase*>(data);
-    database->print();
+    caculalateDistanceMatrix();
+    //database->print();
  }
 
 /**
@@ -52,14 +59,32 @@ double TravelingThiefParser::calculateProfit(TravelingThiefIndividual * s){
     return profit;
 }
 
-/** Calculates the Euclidean distance between two cities **/
+
+/** Return the Euclidean distance of distance matriz **/
 double TravelingThiefParser::calculateDistance(City * a, City * b){
-   return sqrt(pow(a->x - b->x,2) + pow(a->y - b->y,2));
+    return distanceCities[a->index][b->index];
+}
+
+/** Calculates the Euclidean distance between two cities **/
+double TravelingThiefParser::calculateDistanceAB(City * a, City * b){
+    return sqrt(pow(a->x - b->x,2) + pow(a->y - b->y,2));
 }
 
 /** Calculates the travel time between two cities **/
 double TravelingThiefParser::calculateTime(double distance, double speed){
     return distance/speed;
+}
+
+int TravelingThiefParser::calculateDistanceMatrixIndices(int i, int j){
+   return int((i*i + i)/2 + j);
+}
+
+void TravelingThiefParser::caculalateDistanceMatrix(){
+    for(int i = 0; i < database->cities.size(); i++){
+        for(int j = 0; j < database->cities.size(); j++){
+            distanceCities[j][i] = calculateDistanceAB(database->cities[i],database->cities[j]);
+        }
+    }
 }
 
 string TravelingThiefParser::nameParser()

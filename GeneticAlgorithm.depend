@@ -523,13 +523,13 @@
 1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/Crossover.h
 	"Individual.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefDatabase.cpp
+1493492330 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefDatabase.cpp
 	"TravelingThiefDatabase.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
+1493489620 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
 	"TravelingThiefIndividual.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.cpp
+1493489602 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.cpp
 	"TravelingThiefIndividualBuilder.h"
 
 1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.h
@@ -541,10 +541,10 @@
 1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/IndividualBuilder.h
 	"Individual.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.cpp
+1493492288 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.cpp
 	"TravelingThiefParser.h"
 
-1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.h
+1493491988 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.h
 	"Individual.h"
 	"Parser.h"
 	"TravelingThiefIndividual.h"
@@ -555,7 +555,7 @@
 	<string>
 	"Individual.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/main.cpp
+1493490923 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -662,7 +662,7 @@
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/PopulationReplacement.cpp
 	"PopulationReplacement.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SearchEngine.cpp
+1493489676 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SearchEngine.cpp
 	"SearchEngine.h"
 
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SimpleCrossover.cpp
@@ -687,5 +687,8 @@
 	"SimpleReplacement.h"
 
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/TravelingThiefMutation.cpp
+	"TravelingThiefMutation.h"
+
+1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefMutation.cpp
 	"TravelingThiefMutation.h"
 

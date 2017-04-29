@@ -1,8 +1,8 @@
 #include "TravelingThiefIndividual.h"
 
 TravelingThiefIndividual::TravelingThiefIndividual(TravelingThiefDatabase *database) {
-    if(database != NULL)
-        buildsRoute(database);
+//    if(database != NULL)
+//        buildsRoute(database);
 
 //    print();
 //    cin.get();

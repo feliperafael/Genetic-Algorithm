@@ -20,12 +20,12 @@ using namespace std;
 int main(int argc, char * argv[])
 {
     srand(time(NULL));
-//    srand(1015);
+    //srand(42);
 
     conf = new Configures(); //Configuration class with several GA parameters
     conf->elitism = 0.1; // elitism percentage
     conf->generations = 100; // num_max of generations
-    conf->popSize = 1000; // size of population
+    conf->popSize = 10000; // size of population
     conf->crossover = 0.5;  //crossing percentage
     conf->MAX_THREADS = omp_get_max_threads(); // num_max_threads omp
 
@@ -40,6 +40,7 @@ int main(int argc, char * argv[])
     TravelingThiefParser * travelingthiefparser = dynamic_cast<TravelingThiefParser*>(parser);
     travelingthiefparser->setDatabase(database);
 
+
     //Define the individual generator that returns an individual type of problem specific
     TravelingThiefIndividualBuilder * travelingThiefIndividualBuilder = new TravelingThiefIndividualBuilder(database);
 
@@ -50,6 +51,7 @@ int main(int argc, char * argv[])
     searcher->setMutation(new TravelingThiefMutation());
 
     searcher->Evolve();
+
 
 
 

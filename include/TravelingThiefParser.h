@@ -10,6 +10,8 @@
 class TravelingThiefParser : public Parser
 {
     public:
+        double ** distanceCities;//Lower triangular matrix with distances between cities
+
         TravelingThiefDatabase * database;
         TravelingThiefParser();
 
@@ -22,10 +24,16 @@ class TravelingThiefParser : public Parser
     protected:
 
     private:
+
         double calculateSpeed(TravelingThiefIndividual * s);
         double calculateProfit(TravelingThiefIndividual * s);
         double calculateDistance(City * a, City * b);
         double calculateTime(double distance, double speed);
+
+        double calculateDistanceAB(City * a, City * b);
+
+        void   caculalateDistanceMatrix();
+        int    calculateDistanceMatrixIndices(int i, int j);
 };
 
 #endif // TRAVELINGTHIEFPARSER_H

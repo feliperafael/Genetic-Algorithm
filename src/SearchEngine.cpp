@@ -12,18 +12,17 @@ SearchEngine::SearchEngine()
 
 void SearchEngine::Evolve()
 {
-
     createsInitialPopulation();
 
     //initial population evaluation. Mutation and crossing
     EvaluatePopulation(0, conf->popSize);
-
 
     for(int it = 1; it < conf->generations; it++)
     {
 
         //Applies the genetic operators
         Operate();
+
 
         //Evaluates new population
         EvaluatePopulation(conf->popSize, conf->popSize * 2);

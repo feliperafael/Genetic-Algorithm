@@ -97,7 +97,7 @@ void TravelingThiefDatabase::loadBase(string base_name)
         cities.at(ASSIGNED_NODE_NUMBER - 1)->addItem(item);
     }
 
-    //cout << cities.size() << endl;
+    //cout << "cities.size() " << cities.size() << endl;
 
 //    for(City * city : cities)
 //        city->print();
