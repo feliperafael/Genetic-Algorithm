@@ -20,13 +20,14 @@ using namespace std;
 int main(int argc, char * argv[])
 {
     srand(time(NULL));
-    srand(42);
+    //srand(42);
 
     conf = new Configures(); //Configuration class with several GA parameters
     conf->elitism = 0.1; // elitism percentage
     conf->generations = 100; // num_max of generations
     conf->popSize = 1000; // size of population
     conf->crossover = 0.5;  //crossing percentage
+    conf->mutate = 1; // mutate percentage
     conf->MAX_THREADS = omp_get_max_threads(); // num_max_threads omp
 
 

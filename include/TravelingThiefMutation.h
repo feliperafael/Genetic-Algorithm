@@ -16,6 +16,8 @@ class TravelingThiefMutation : public Mutation
     protected:
 
     private:
+        void cityMutate(TravelingThiefIndividual * individual);
+        void itemMutate(TravelingThiefIndividual * individual);
 };
 
 #endif // TRAVELINGTHIEFMUTATION_H

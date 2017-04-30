@@ -13,9 +13,11 @@ SearchEngine::SearchEngine()
 void SearchEngine::Evolve()
 {
     createsInitialPopulation();
-
+    cout << "População inicial criada" << endl;
     //initial population evaluation. Mutation and crossing
+    cout << "avaliando população inicial" << endl;
     EvaluatePopulation(0, conf->popSize);
+    cout << "Evolve...." << endl;
 
     for(int it = 1; it < conf->generations; it++)
     {
@@ -57,6 +59,8 @@ void SearchEngine::createsInitialPopulation()
 void SearchEngine::EvaluatePopulation(int initialIndex, int finalIndex)
 {
     //cout << "EvaluatePopulation" << endl;
+    int n = omp_get_max_threads();
+    #pragma omp parallel for num_threads(n)
     for(int i = initialIndex; i < finalIndex; ++i){
 //        cout << i << " - ";
 //        cout << parser->nameParser() << endl;

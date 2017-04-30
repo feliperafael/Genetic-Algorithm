@@ -40,42 +40,54 @@ void TravelingThiefIndividual::buildsRoute(TravelingThiefDatabase * database) {
 
     // shuffles the vector
     std::random_shuffle ( cities + 1, cities+amountOfCity ); //first and last cities should not be modified
-    buildKsnapsack(database);
 
-//    for(int i = 0; i < database->DIMENSION; ++i){
-//        c[i]->print();
-//        cin.get();
-//    }
-//   for(City *city : c){
-//        cities.push_back(city);
-//        for(Item *item : city->items){
-//            city->items.push_back(item);
-//            this->knapsack.push_back(item);
-//            this->weightKnapsack += item->weight;
-//        }
-//   }
-//   c.erase( c.begin(), c.end() );
-//   cout <<  database->DIMENSION;
-//   cin.get();
-//    cout << this->weightKnapsack;
-//    cin.get();
+   if(rand()%2==0)
+        smartBuildKsnapsack();
+    else
+        buildKsnapsack();
+
 }
 
-void TravelingThiefIndividual::buildKsnapsack(TravelingThiefDatabase * database) {
+void TravelingThiefIndividual::buildKsnapsack() {
     City *c;
     int itemSize = 0;
 
     knapsack = new vector<Item*>[amountOfCity];
 
-    for(int i = 0; i < database->DIMENSION; ++i) {
+    for(int i = 0; i < amountOfCity; ++i) {
         c = cities[i];
         itemSize = c->items.size();
-        for(int j = 0; j < itemSize; ++j) {
+        //for(int j = 0; j < itemSize; ++j) {
             for(Item * item : c->items) {
                 if(knapsackAcceptsItem(item)) {
                     addOnKnapsack(item);
                 }
             }
+        //}
+    }
+}
+
+void TravelingThiefIndividual::smartBuildKsnapsack(){
+    City *c;
+    knapsack = new vector<Item*>[amountOfCity];
+    vector<Item*> auxKnapsack;
+
+    for(int i = 0; i < amountOfCity; ++i) {
+        c = cities[i];
+        for(Item * item : c->items) {
+            auxKnapsack.push_back(item);
+        }
+    }
+    sort(auxKnapsack.begin(),auxKnapsack.end(),sortItemsByCostWeight);
+
+    for(Item * item : auxKnapsack) {
+       //cout << "city " <<  item->city << " index " << item->index << " costBenefit " <<  item->getCostBenefit() << endl;
+    }
+    //cin.get();
+
+    for(Item * item : auxKnapsack) {
+        if(knapsackAcceptsItem(item)) {
+            addOnKnapsack(item);
         }
     }
 }
@@ -86,19 +98,29 @@ void TravelingThiefIndividual::addOnKnapsack(Item *item){
 }
 
 bool TravelingThiefIndividual::knapsackAcceptsItem(Item * item) {
-    if(this->weightKnapsack + item->weight < conf->CAPACITY_OF_KNAPSACK)
+    //Check restriction
+    if(this->weightKnapsack + item->weight < conf->CAPACITY_OF_KNAPSACK){
         return true;
+    }
 
     return false;
 }
 
 void TravelingThiefIndividual::print() {
+    bool aux = false;
     cout << fitness << ", " << weightKnapsack << ", " << conf->CAPACITY_OF_KNAPSACK << endl;
     for(int i = 0; i < amountOfCity; i++){
-        cout << cities[i]->index << " ";
-//        for(Item* item : knapsack[i])
-//            cout << item->index << " ";
-//        cout << endl;
+        cout << "[" << cities[i]->index << " (";
+        for(Item* item : knapsack[i]){
+            if(knapsack[i].size() > 1 && aux == true){
+                cout << ",";
+                aux == true;
+            }
+            cout << item->index;
+            aux = true;
+        }
+        aux = false;
+        cout << ")] => ";
     }
     cout << endl;
 }
@@ -116,25 +138,45 @@ void TravelingThiefIndividual::buildRouteOfLeastPath(TravelingThiefDatabase * da
     }
 
     // shuffles the vector
-    std::sort( cities + 1, cities+amountOfCity, SortCitiesByDistanceCost ); //first and last cities should not be modified
+    std::sort( cities + 1, cities+amountOfCity, sortCitiesByDistanceCost ); //first and last cities should not be modified
 
     for(int i = 0; i < amountOfCity ; ++i) {
-        for(int j = i; j < amountOfCity -1; j++){
-             if(calculateDistance(cities[i], cities[j])/cities[j]->getCostBenefit() > calculateDistance(cities[i], cities[j+1])/cities[j+1]->getCostBenefit()){
-                if(rand()%100 < 95)
+        for(int j = i+1; j < amountOfCity -1; j++){
+            if(calculateDistance(cities[i], cities[j])/cities[j]->getCostBenefit() > calculateDistance(cities[i], cities[j+1])/cities[j+1]->getCostBenefit()){
+                if(rand()%100 < 60)
                     swap(cities[j],cities[j+1]);
-             }
+            }
         }
 
     }
-    buildKsnapsack(database);
+
+    if(rand()%2==0)
+        smartBuildKsnapsack();
+    else
+        buildKsnapsack();
 }
 /** Calculates the Euclidean distance between two cities **/
 double TravelingThiefIndividual::calculateDistance(City * a, City * b){
     return sqrt(pow(a->x - b->x,2) + pow(a->y - b->y,2));
 }
 
-bool TravelingThiefIndividual::SortCitiesByDistanceCost(City* a, City* b){
+bool TravelingThiefIndividual::sortCitiesByDistanceCost(City* a, City* b){
+    if(a->getCostBenefit() > b->getCostBenefit())
+        return true;
+    return false;
+ }
+
+ void TravelingThiefIndividual::cleanKnapsack(){
+     weightKnapsack = 0;
+     for(int i = 0; i < amountOfCity; i++){
+        knapsack[i].clear();
+        knapsack[i].shrink_to_fit();
+    }
+
+    delete [] knapsack;
+ }
+
+ bool TravelingThiefIndividual::sortItemsByCostWeight(Item* a, Item* b){
     if(a->getCostBenefit() > b->getCostBenefit())
         return true;
     return false;
@@ -143,10 +185,5 @@ bool TravelingThiefIndividual::SortCitiesByDistanceCost(City* a, City* b){
 
 TravelingThiefIndividual::~TravelingThiefIndividual() {
     delete [] cities;
-    for(int i = 0; i < amountOfCity; i++){
-        knapsack[i].clear();
-        knapsack[i].shrink_to_fit();
-    }
-
-    delete [] knapsack;
+    cleanKnapsack();
 }

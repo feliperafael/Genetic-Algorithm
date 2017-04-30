@@ -1,6 +1,6 @@
 #ifndef SEARCHENGINE_H
 #define SEARCHENGINE_H
-
+#include <omp.h>
 #include "Configures.h"
 #include "Individual.h"
 #include "IndividualBuilder.h"

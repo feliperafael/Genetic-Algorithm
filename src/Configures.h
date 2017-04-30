@@ -11,6 +11,7 @@ class Configures
         double elitism;
         int generations;
         double crossover;
+        double mutate;
         int MAX_THREADS;
 
         int num_citys;
