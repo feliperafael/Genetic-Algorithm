@@ -13,11 +13,14 @@ SearchEngine::SearchEngine()
 void SearchEngine::Evolve()
 {
     createsInitialPopulation();
-    cout << "População inicial criada" << endl;
+
     //initial population evaluation. Mutation and crossing
-    cout << "avaliando população inicial" << endl;
     EvaluatePopulation(0, conf->popSize);
-    cout << "Evolve...." << endl;
+    stable_sort(population, population + conf->popSize, sortPopulationByFitness);
+
+    double best;
+    int generationsWithoutImprovement = 0;
+    best = population[0]->fitness;
 
     for(int it = 1; it < conf->generations; it++)
     {
@@ -33,10 +36,20 @@ void SearchEngine::Evolve()
         replacer->Replace(population);
 
         // free temporary population
+        #pragma omp parallel for num_threads(conf->MAX_THREADS)
         for(int i = conf->popSize; i < conf->popSize * 2; i++)
         {
             delete population[i];// passar para dentro do replace?
         }
+        if(best < population[0]->fitness){
+            best = population[0]->fitness;
+            cout << it << " " << best << endl;
+            generationsWithoutImprovement=0;
+        }else{
+            generationsWithoutImprovement++;
+        }
+        if(generationsWithoutImprovement > conf->max_generationsWithoutImprovement)
+            break;
     }
 
     //Prints the best result in n generations
@@ -59,8 +72,7 @@ void SearchEngine::createsInitialPopulation()
 void SearchEngine::EvaluatePopulation(int initialIndex, int finalIndex)
 {
     //cout << "EvaluatePopulation" << endl;
-    int n = omp_get_max_threads();
-    #pragma omp parallel for num_threads(n)
+    #pragma omp parallel for num_threads(conf->MAX_THREADS)
     for(int i = initialIndex; i < finalIndex; ++i){
 //        cout << i << " - ";
 //        cout << parser->nameParser() << endl;
@@ -104,7 +116,7 @@ void  SearchEngine::Operate()
 
 }
 
- bool SearchEngine::SortPopulationByFitness(Individual* a, Individual* b){
+ bool SearchEngine::sortPopulationByFitness(Individual* a, Individual* b){
     return a->fitness > b->fitness;
  }
 

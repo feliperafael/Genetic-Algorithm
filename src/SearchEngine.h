@@ -47,7 +47,7 @@ class SearchEngine
 
     private:
         void EvaluatePopulation(int initialIndex, int finalIndex);
-        static bool SortPopulationByFitness(Individual* a, Individual* b);
+        static bool sortPopulationByFitness(Individual* a, Individual* b);
         void createsInitialPopulation();
 };
 

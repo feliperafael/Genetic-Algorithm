@@ -50,13 +50,11 @@ void TravelingThiefIndividual::buildsRoute(TravelingThiefDatabase * database) {
 
 void TravelingThiefIndividual::buildKsnapsack() {
     City *c;
-    int itemSize = 0;
 
     knapsack = new vector<Item*>[amountOfCity];
 
     for(int i = 0; i < amountOfCity; ++i) {
         c = cities[i];
-        itemSize = c->items.size();
         //for(int j = 0; j < itemSize; ++j) {
             for(Item * item : c->items) {
                 if(knapsackAcceptsItem(item)) {
@@ -80,9 +78,7 @@ void TravelingThiefIndividual::smartBuildKsnapsack(){
     }
     sort(auxKnapsack.begin(),auxKnapsack.end(),sortItemsByCostWeight);
 
-    for(Item * item : auxKnapsack) {
-       //cout << "city " <<  item->city << " index " << item->index << " costBenefit " <<  item->getCostBenefit() << endl;
-    }
+
     //cin.get();
 
     for(Item * item : auxKnapsack) {
@@ -114,7 +110,6 @@ void TravelingThiefIndividual::print() {
         for(Item* item : knapsack[i]){
             if(knapsack[i].size() > 1 && aux == true){
                 cout << ",";
-                aux == true;
             }
             cout << item->index;
             aux = true;

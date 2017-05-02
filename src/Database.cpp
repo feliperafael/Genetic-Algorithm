@@ -47,8 +47,7 @@ double* Database::getRegister(int position){
 
 void Database::print(){
     for(int i = 0; i < registros; i++){
-        int j = 0;
-        for(j; j < variaveis; j++)
+        for(int j = 0; j < variaveis; j++)
             cout << values[i][j] << "\t";
         cout << endl;
     }

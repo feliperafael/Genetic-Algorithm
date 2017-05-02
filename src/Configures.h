@@ -13,6 +13,7 @@ class Configures
         double crossover;
         double mutate;
         int MAX_THREADS;
+        int max_generationsWithoutImprovement;
 
         int num_citys;
         int max_itens;

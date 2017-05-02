@@ -84,8 +84,9 @@ int TravelingThiefParser::calculateDistanceMatrixIndices(int i, int j){
 }
 
 void TravelingThiefParser::caculalateDistanceMatrix(){
-    for(int i = 0; i < database->cities.size(); i++){
-        for(int j = 0; j < database->cities.size(); j++){
+    int cities_size = database->cities.size();
+    for(int i = 0; i < cities_size; i++){
+        for(int j = 0; j < cities_size; j++){
             distanceCities[j][i] = calculateDistanceAB(database->cities[i],database->cities[j]);
         }
     }
