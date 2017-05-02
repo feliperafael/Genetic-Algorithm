@@ -6,7 +6,7 @@ Project uses IDE codeblocks
 <b>Requirements</b>: Need C++ 11 or higher<br>
 <b>How to compile?</b> Open a window in the terminal and execute the make command
 <br>
-<b>How to run?</b> ./bin/Release/GeneticAlgorithm input/input_file
+<b>How to run?</b> ./bin/Release/GeneticAlgorithm input/input_file<br>
 <b>How is the code organized?</b><br>
 <p>The /src is where all the basic source codes of the genetic algorithm are, including abstract classes and default implementations.</p>
 <p>The /input is where the input files are dependent on the problem being solved</p>
