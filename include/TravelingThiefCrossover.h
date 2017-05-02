@@ -8,7 +8,7 @@ class TravelingThiefCrossover : Crossover
 {
     public:
         TravelingThiefCrossover();
-        void crossover(Individual* s1_, Individual* s2_);
+        void cross(Individual ** vec_individuos, int num_individuos);
         virtual ~TravelingThiefCrossover();
 
     protected:

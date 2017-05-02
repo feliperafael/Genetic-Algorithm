@@ -133,18 +133,24 @@ void TravelingThiefIndividual::buildRouteOfLeastPath(TravelingThiefDatabase * da
     }
 
     // shuffles the vector
-    std::sort( cities + 1, cities+amountOfCity, sortCitiesByDistanceCost ); //first and last cities should not be modified
+    std::sort( cities + 1, cities+amountOfCity, sortCitiesByDistanceCost ); //first city should not be modified
 
-    for(int i = 0; i < amountOfCity ; ++i) {
-        for(int j = i+1; j < amountOfCity -1; j++){
-            if(calculateDistance(cities[i], cities[j])/cities[j]->getCostBenefit() > calculateDistance(cities[i], cities[j+1])/cities[j+1]->getCostBenefit()){
-                if(rand()%100 < 60)
-                    swap(cities[j],cities[j+1]);
+    for(int i = 0; i < amountOfCity - 1; ++i) {
+//        cout << i << endl;
+        int p = i + 1;
+        double distanceip = calculateDistance(cities[i], cities[p]);
+        for(int j = i+2; j < amountOfCity; j++){
+//        cout << "   " << p << "  " << j << endl;
+            if(distanceip/cities[p]->getCostBenefit() > calculateDistance(cities[i], cities[j])/cities[j]->getCostBenefit()){
+                if(rand()%100 < 60){
+                    p = j;
+                    distanceip = calculateDistance(cities[i], cities[j]);
+                }
             }
         }
-
+        swap(cities[p], cities[i + 1]);
     }
-
+//    cin.get();
     if(rand()%2==0)
         smartBuildKsnapsack();
     else

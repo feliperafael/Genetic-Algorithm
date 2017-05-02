@@ -24,18 +24,9 @@ void TravelingThiefMutation::cityMutate(TravelingThiefIndividual * individual){
 
     swap(individual->cities[cityA], individual->cities[cityB]);
     swap(individual->knapsack[cityA], individual->knapsack[cityB]);
-
-//    individual->cleanKnapsack();
-//    //cout << "PESO : "<< individual->weightKnapsack << " FIT " << individual->fitness << endl;
-//    if(rand()%2==0)
-//        individual->smartBuildKsnapsack();
-//    else
-//        individual->buildKsnapsack();
-//   // cout << "PESO : "<< individual->weightKnapsack << " FIT " << individual->fitness << endl;cin.get();
 }
 
 
 void TravelingThiefMutation::itemMutate(TravelingThiefIndividual * individual){
-
 
 }

@@ -13,6 +13,7 @@
 #include "TravelingThiefIndividualBuilder.h"
 #include "TravelingThiefParser.h"
 #include "TravelingThiefMutation.h"
+#include "TravelingThiefCrossover.h"
 
 
 using namespace std;
@@ -61,6 +62,22 @@ int main(int argc, char * argv[])
     searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
 
     searcher->setMutation(new TravelingThiefMutation());
+//    searcher->setCrossover(new TravelingThiefCrossover());
+
+//    TravelingThiefCrossover* crossover = new TravelingThiefCrossover();
+//
+//    Individual* s[2];
+//
+//    s[0] = travelingThiefIndividualBuilder->generateIndividuo();
+//    s[1] = travelingThiefIndividualBuilder->generateIndividuo();
+//
+//    s[0]->print();
+//    s[1]->print();
+//
+//    crossover->cross(s, 2);
+//
+//    s[0]->print();
+//    s[1]->print();
 
     searcher->Evolve();
 
