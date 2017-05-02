@@ -12,6 +12,8 @@ SearchEngine::SearchEngine()
 
 void SearchEngine::Evolve()
 {
+    double time_init =  omp_get_wtime();
+
     createsInitialPopulation();
 
     //initial population evaluation. Mutation and crossing
@@ -36,7 +38,7 @@ void SearchEngine::Evolve()
         replacer->Replace(population);
 
         // free temporary population
-        #pragma omp parallel for num_threads(conf->MAX_THREADS)
+        //#pragma omp parallel for num_threads(conf->MAX_THREADS)
         for(int i = conf->popSize; i < conf->popSize * 2; i++)
         {
             delete population[i];// passar para dentro do replace?
@@ -50,7 +52,9 @@ void SearchEngine::Evolve()
                 generationsWithoutImprovement++;
             }
         #endif
-        if(generationsWithoutImprovement > conf->max_generationsWithoutImprovement)
+//        if(generationsWithoutImprovement > conf->max_generationsWithoutImprovement)
+//            break;
+        if(omp_get_wtime() - time_init > conf->MAX_TIME)
             break;
     }
 

@@ -24,6 +24,7 @@ class Configures
         double MIN_SPEED;
         double MAX_SPEED;
         double RENTING_RATIO;
+        double MAX_TIME;
 
         virtual ~Configures();
 

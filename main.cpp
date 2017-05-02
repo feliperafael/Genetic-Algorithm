@@ -19,13 +19,16 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
+   // double wall_timer = omp_get_wtime();
+
     clock_t tick;
     tick = clock();
-    double wall_timer;
-    int seed = time(NULL);
+    int seed = atoi(argv[3]);
+
+    if(atoi(argv[3]) == 0)
+        seed = time(NULL);
 
     srand(seed);
-    cout << "seed " << seed << endl;
     //srand(42);
 
     conf = new Configures(); //Configuration class with several GA parameters
@@ -36,6 +39,7 @@ int main(int argc, char * argv[])
     conf->mutate = 1.0; // mutate percentage
     conf->MAX_THREADS = omp_get_max_threads(); // num_max_threads omp
     conf->max_generationsWithoutImprovement = 500;
+    conf->MAX_TIME = atoi(argv[2]);
 
 
     //Create a problem database and load the input file.
@@ -57,11 +61,13 @@ int main(int argc, char * argv[])
     searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
 
     searcher->setMutation(new TravelingThiefMutation());
-    wall_timer = omp_get_wtime();
+
     searcher->Evolve();
 
 
-    cout << "\ntime : " <<  omp_get_wtime() - wall_timer << " s" << endl;
+   // cout << "\ntime : " <<  (omp_get_wtime() - wall_timer) << " s" << endl;
+    cout << "seed " << seed << endl;
+    cout << "MAX TIME :" << conf->MAX_TIME << endl;
 
 
 
