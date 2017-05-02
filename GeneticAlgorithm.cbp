@@ -39,6 +39,7 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-O3" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>

@@ -20,7 +20,8 @@ using namespace std;
 int main(int argc, char * argv[])
 {
     clock_t tick;
-    tick = omp_get_wtime();
+    tick = clock();
+    double wall_timer;
     int seed = time(NULL);
 
     srand(seed);
@@ -56,12 +57,11 @@ int main(int argc, char * argv[])
     searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
 
     searcher->setMutation(new TravelingThiefMutation());
-
+    wall_timer = omp_get_wtime();
     searcher->Evolve();
 
 
-    double Tempo = (omp_get_wtime() - tick);
-    printf("Tempo gasto: %g. s", Tempo);
+    cout << "\ntime : " <<  omp_get_wtime() - wall_timer << " s" << endl;
 
 
 

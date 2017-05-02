@@ -41,13 +41,15 @@ void SearchEngine::Evolve()
         {
             delete population[i];// passar para dentro do replace?
         }
-        if(best < population[0]->fitness){
-            best = population[0]->fitness;
-            cout << it << " " << best << endl;
-            generationsWithoutImprovement=0;
-        }else{
-            generationsWithoutImprovement++;
-        }
+        #ifdef debug
+            if(best < population[0]->fitness){
+                best = population[0]->fitness;
+                cout << it << " " << best << endl;
+                generationsWithoutImprovement=0;
+            }else{
+                generationsWithoutImprovement++;
+            }
+        #endif
         if(generationsWithoutImprovement > conf->max_generationsWithoutImprovement)
             break;
     }
