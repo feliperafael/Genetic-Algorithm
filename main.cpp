@@ -63,33 +63,12 @@ int main(int argc, char * argv[])
     searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
 
     searcher->setMutation(new TravelingThiefMutation());
-////    searcher->setCrossover(new TravelingThiefCrossover());
-
-//    TravelingThiefCrossover* crossover = new TravelingThiefCrossover();
-//
-//    Individual* s[2];
-//
-//    s[0] = travelingThiefIndividualBuilder->generateIndividuo();
-//    s[1] = travelingThiefIndividualBuilder->generateIndividuo();
-//
-//    s[0]->print();
-//    s[1]->print();
-//
-//    crossover->cross(s, 2);
-//
-//    s[0]->print();
-//    s[1]->print();
-
-    TravelingThiefIndividual* s = dynamic_cast<TravelingThiefIndividual*>(travelingThiefIndividualBuilder->generateIndividuo());
-    travelingthiefparser->Evaluate(s);
 
     TravelingThiefLocalSearch* ls = new TravelingThiefLocalSearch();
     ls->setParser(travelingthiefparser);
-    s->print();
-    s = ls->doLocalSearch(s);
-    s->print();
 
-//    searcher->Evolve();
+    searcher->setLocalSearch(ls);
+    searcher->Evolve();
 
 
    // cout << "\ntime : " <<  (omp_get_wtime() - wall_timer) << " s" << endl;

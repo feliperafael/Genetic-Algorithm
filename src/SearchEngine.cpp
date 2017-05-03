@@ -19,17 +19,16 @@ void SearchEngine::Evolve()
     //initial population evaluation. Mutation and crossing
     EvaluatePopulation(0, conf->popSize);
     stable_sort(population, population + conf->popSize, sortPopulationByFitness);
-
-    double best;
-    int generationsWithoutImprovement = 0;
-    best = population[0]->fitness;
+    #ifdef stepToStep
+        double best;
+        int generationsWithoutImprovement = 0;
+        best = population[0]->fitness;
+    #endif
 
     for(int it = 1; it < conf->generations; it++)
     {
-
         //Applies the genetic operators
         Operate();
-
 
         //Evaluates new population
         EvaluatePopulation(conf->popSize, conf->popSize * 2);
@@ -43,7 +42,7 @@ void SearchEngine::Evolve()
         {
             delete population[i];// passar para dentro do replace?
         }
-        #ifdef debug
+        #ifdef stepToStep
             if(best < population[0]->fitness){
                 best = population[0]->fitness;
                 cout << it << " " << best << endl;
@@ -56,6 +55,9 @@ void SearchEngine::Evolve()
 //            break;
         if(omp_get_wtime() - time_init > conf->MAX_TIME)
             break;
+
+        if(it%conf->localSearchWindow == 0)
+            doLocalSearch();
     }
 
     //Prints the best result in n generations
@@ -122,6 +124,11 @@ void  SearchEngine::Operate()
 
 }
 
+void SearchEngine::doLocalSearch(){
+    for(int i = 0; i < conf->popSize; i++){
+        population[i] = localSearch->doLocalSearch(population[i]);
+    }
+}
  bool SearchEngine::sortPopulationByFitness(Individual* a, Individual* b){
     return a->fitness > b->fitness;
  }
@@ -178,6 +185,10 @@ void SearchEngine::setPopulationReplace(PopulationReplacement * popReplace){
     }else{
         this->replacer = popReplace;
     }
+}
+
+void SearchEngine::setLocalSearch(LocalSearch * localSearch){
+    this->localSearch = localSearch;
 }
 
 SearchEngine::~SearchEngine()

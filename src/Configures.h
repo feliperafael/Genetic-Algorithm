@@ -14,6 +14,7 @@ class Configures
         double mutate;
         int MAX_THREADS;
         int max_generationsWithoutImprovement;
+        int localSearchWindow;
 
         int num_citys;
         int max_itens;
@@ -25,6 +26,7 @@ class Configures
         double MAX_SPEED;
         double RENTING_RATIO;
         double MAX_TIME;
+
 
         virtual ~Configures();
 

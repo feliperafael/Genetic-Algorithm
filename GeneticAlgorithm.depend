@@ -483,14 +483,14 @@
 1493495039 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/Item.cpp
 	"Item.h"
 
-1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefCrossover.cpp
+1493807926 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefCrossover.cpp
 	"TravelingThiefCrossover.h"
 
-1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefCrossover.h
+1493807926 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefCrossover.h
 	"TravelingThiefIndividual.h"
 	"Crossover.h"
 
-1493582571 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.h
+1493807926 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.h
 	<iostream>
 	<stdlib.h>
 	<vector>
@@ -505,7 +505,7 @@
 	"Configures.h"
 	"Individual.h"
 
-1493740145 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/Configures.h
+1493809849 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/Configures.h
 
 1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefDatabase.h
 	<stdio.h>
@@ -529,7 +529,7 @@
 1493492330 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefDatabase.cpp
 	"TravelingThiefDatabase.h"
 
-1493722953 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
+1493807926 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
 	"TravelingThiefIndividual.h"
 
 1493497027 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefIndividualBuilder.cpp
@@ -544,7 +544,7 @@
 1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/IndividualBuilder.h
 	"Individual.h"
 
-1493722898 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.cpp
+1493807926 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.cpp
 	"TravelingThiefParser.h"
 
 1493491988 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefParser.h
@@ -558,7 +558,7 @@
 	<string>
 	"Individual.h"
 
-1493741941 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/main.cpp
+1493809987 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -572,8 +572,10 @@
 	"TravelingThiefIndividualBuilder.h"
 	"TravelingThiefParser.h"
 	"TravelingThiefMutation.h"
+	"TravelingThiefCrossover.h"
+	"TravelingThiefLocalSearch.h"
 
-1493595902 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SearchEngine.h
+1493809622 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SearchEngine.h
 	<omp.h>
 	"Configures.h"
 	"Individual.h"
@@ -590,6 +592,7 @@
 	"SimpleIndividualSelector.h"
 	"SimpleParser.h"
 	"SimpleReplacement.h"
+	"LocalSearch.h"
 
 1493486663 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/IndividualSelector.h
 	"Individual.h"
@@ -639,7 +642,7 @@
 	"TravelingThiefIndividual.h"
 	"Mutation.h"
 
-1493741373 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/Configures.cpp
+1493809859 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/Configures.cpp
 	"Configures.h"
 
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/Crossover.cpp
@@ -666,7 +669,7 @@
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/PopulationReplacement.cpp
 	"PopulationReplacement.h"
 
-1493741478 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SearchEngine.cpp
+1493809955 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SearchEngine.cpp
 	"SearchEngine.h"
 
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/SimpleCrossover.cpp
@@ -693,7 +696,7 @@
 1493486663 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/TravelingThiefMutation.cpp
 	"TravelingThiefMutation.h"
 
-1493600151 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefMutation.cpp
+1493807926 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefMutation.cpp
 	"TravelingThiefMutation.h"
 
 1493769920 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefMutation.cpp
@@ -712,4 +715,21 @@
 1493778552 /home/joao/2017/GeneticAlgorithm/include/TravelingThiefLocalSearch.h
 	"LocalSearch.h"
 	"TravelingThiefIndividual.h"
+
+1493807926 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefLocalSearch.h
+	"LocalSearch.h"
+	"TravelingThiefIndividual.h"
+
+1493809367 /home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/LocalSearch.h
+	"Individual.h"
+	"Parser.h"
+
+1493807926 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/LocalSearch.cpp
+	"LocalSearch.h"
+
+1493807926 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/src/TravelingThiefLocalSearch.cpp
+	"TravelingThiefLocalSearch.h"
+
+1493807926 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefLocalSearch.cpp
+	"TravelingThiefLocalSearch.h"
 

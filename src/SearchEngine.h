@@ -16,6 +16,7 @@
 #include "SimpleIndividualSelector.h"
 #include "SimpleParser.h"
 #include "SimpleReplacement.h"
+#include "LocalSearch.h"
 
 class SearchEngine
 {
@@ -27,6 +28,7 @@ class SearchEngine
         Mutation * mutationOperator;
         Crossover * crossoverOperator;
         IndividualSelector * individualSelector;
+        LocalSearch * localSearch;
 
 
         SearchEngine();
@@ -42,6 +44,7 @@ class SearchEngine
         void setPopulationReplace(PopulationReplacement * popReplace);
         void setParser(Parser * parser);
         void setSelection(IndividualSelector * seletor);
+        void setLocalSearch(LocalSearch * localSearch);
 
     protected:
 
@@ -49,6 +52,7 @@ class SearchEngine
         void EvaluatePopulation(int initialIndex, int finalIndex);
         static bool sortPopulationByFitness(Individual* a, Individual* b);
         void createsInitialPopulation();
+        void doLocalSearch();
 };
 
 #endif // SEARCHENGINE_H
