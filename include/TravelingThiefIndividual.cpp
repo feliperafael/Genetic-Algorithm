@@ -104,7 +104,8 @@ bool TravelingThiefIndividual::knapsackAcceptsItem(Item * item) {
 
 void TravelingThiefIndividual::print() {
     bool aux = false;
-    cout << fitness << ", " << weightKnapsack << ", " << conf->CAPACITY_OF_KNAPSACK << endl;
+//    cout << fitness << " " << weightKnapsack << " " << conf->CAPACITY_OF_KNAPSACK << endl;
+    cout << fitness << " " << weightKnapsack << " " << distance << " " << conf->seed << " ";
     for(int i = 0; i < amountOfCity; i++){
         cout << "[" << cities[i]->index << " (";
         for(Item* item : knapsack[i]){
@@ -117,7 +118,6 @@ void TravelingThiefIndividual::print() {
         aux = false;
         cout << ")] => ";
     }
-    cout << endl;
 }
 
 void TravelingThiefIndividual::buildRouteOfLeastPath(TravelingThiefDatabase * database){

@@ -8,6 +8,7 @@ all: create_folders
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c include/TravelingThiefIndividualBuilder.cpp -o obj/Release/include/TravelingThiefIndividualBuilder.o
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c include/TravelingThiefMutation.cpp -o obj/Release/include/TravelingThiefMutation.o
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c include/TravelingThiefParser.cpp -o obj/Release/include/TravelingThiefParser.o
+	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c include/TravelingThiefLocalSearch.cpp -o obj/Release/include/TravelingThiefLocalSearch.o
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c main.cpp -o obj/Release/main.o
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c src/Configures.cpp -o obj/Release/src/Configures.o
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c src/Crossover.cpp -o obj/Release/src/Crossover.o
@@ -26,8 +27,9 @@ all: create_folders
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c src/SimpleMutation.cpp -o obj/Release/src/SimpleMutation.o
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c src/SimpleParser.cpp -o obj/Release/src/SimpleParser.o
 	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c src/SimpleReplacement.cpp -o obj/Release/src/SimpleReplacement.o
+	g++ -O3 -Wall -fexceptions -std=c++11 -fopenmp -fopenmp -Isrc -Iinclude -c src/LocalSearch.cpp -o obj/Release/src/LocalSearch.o
 	
-	g++ -o bin/Release/GeneticAlgorithm obj/Release/include/City.o obj/Release/include/Item.o obj/Release/include/TravelingThiefCrossover.o obj/Release/include/TravelingThiefDatabase.o obj/Release/include/TravelingThiefIndividual.o obj/Release/include/TravelingThiefIndividualBuilder.o obj/Release/include/TravelingThiefMutation.o obj/Release/include/TravelingThiefParser.o obj/Release/main.o obj/Release/src/Configures.o obj/Release/src/Crossover.o obj/Release/src/Database.o obj/Release/src/Individual.o obj/Release/src/IndividualBuilder.o obj/Release/src/IndividualSelector.o obj/Release/src/Mutation.o obj/Release/src/Parser.o obj/Release/src/PopulationReplacement.o obj/Release/src/SearchEngine.o obj/Release/src/SimpleCrossover.o obj/Release/src/SimpleIndividual.o obj/Release/src/SimpleIndividualBuilder.o obj/Release/src/SimpleIndividualSelector.o obj/Release/src/SimpleMutation.o obj/Release/src/SimpleParser.o obj/Release/src/SimpleReplacement.o  -s -lgomp -pthread 
+	g++ -o bin/Release/GeneticAlgorithm obj/Release/include/City.o obj/Release/include/Item.o obj/Release/src/LocalSearch.o obj/Release/include/TravelingThiefLocalSearch.o obj/Release/include/TravelingThiefCrossover.o obj/Release/include/TravelingThiefDatabase.o obj/Release/include/TravelingThiefIndividual.o obj/Release/include/TravelingThiefIndividualBuilder.o obj/Release/include/TravelingThiefMutation.o obj/Release/include/TravelingThiefParser.o obj/Release/main.o obj/Release/src/Configures.o obj/Release/src/Crossover.o obj/Release/src/Database.o obj/Release/src/Individual.o obj/Release/src/IndividualBuilder.o obj/Release/src/IndividualSelector.o obj/Release/src/Mutation.o obj/Release/src/Parser.o obj/Release/src/PopulationReplacement.o obj/Release/src/SearchEngine.o obj/Release/src/SimpleCrossover.o obj/Release/src/SimpleIndividual.o obj/Release/src/SimpleIndividualBuilder.o obj/Release/src/SimpleIndividualSelector.o obj/Release/src/SimpleMutation.o obj/Release/src/SimpleParser.o obj/Release/src/SimpleReplacement.o  -s -lgomp -pthread 
 
 create_folders:
 	mkdir obj

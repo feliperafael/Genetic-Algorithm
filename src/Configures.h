@@ -7,6 +7,7 @@ class Configures
     public:
         Configures();
 
+        int seed;
         int popSize;
         double elitism;
         int generations;

@@ -21,7 +21,7 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-   // double wall_timer = omp_get_wtime();
+    double wall_timer = omp_get_wtime();
 
     clock_t tick;
     tick = clock();
@@ -34,9 +34,10 @@ int main(int argc, char * argv[])
     //srand(42);
 
     conf = new Configures(); //Configuration class with several GA parameters
+    conf->seed = seed;
     conf->elitism = 0.2; // elitism percentage
     conf->generations = 10000; // num_max of generations
-    conf->popSize = 10000; // size of population
+    conf->popSize = 500; // size of population
     conf->crossover = 0.5;  //crossing percentage
     conf->mutate = 1.0; // mutate percentage
     conf->MAX_THREADS = omp_get_max_threads(); // num_max_threads omp
@@ -70,13 +71,7 @@ int main(int argc, char * argv[])
     searcher->setLocalSearch(ls);
     searcher->Evolve();
 
-
-   // cout << "\ntime : " <<  (omp_get_wtime() - wall_timer) << " s" << endl;
-    cout << "seed " << seed << endl;
-    cout << "MAX TIME :" << conf->MAX_TIME << endl;
-
-
-
+    cout << (omp_get_wtime() - wall_timer) << endl;
 
     return 0;
 }

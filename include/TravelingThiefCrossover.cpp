@@ -74,49 +74,9 @@ void TravelingThiefCrossover::cross(Individual** individuals, int size){
 
     original1.clear();
     original2.clear();
-    delete [] memory1;
-    delete [] memory2;
 
-    s1->cleanKnapsack();
-    s1->smartBuildKsnapsack();
-    s2->cleanKnapsack();
-    s2->smartBuildKsnapsack();
-
-//    int s = rand() % s1->amountOfCity;
-//    int e = rand() % s1->amountOfCity;
-//
-//    if(s > e)
-//        swap(s, e);
-//
-//    /*** PMX ***/
-//
-//    vector<City*> original1;
-//    vector<City*> original2;
-//
-//    for(int i = 0; i < s1->amountOfCity; i++){
-//        original1.push_back(s1->cities[i]);
-//        original2.push_back(s2->cities[i]);
-//    }
-//
-//    bool memory1[s1->amountOfCity] = {0};
-//    bool memory2[s1->amountOfCity] = {0};
-//
-//    for(int i = s; i <= e; i++){
-//        memory1[s2->cities[i]->index] = 1;
-//        memory2[s1->cities[i]->index] = 1;
-//
-//        swap(s1->cities[i], s2->cities[i]);
-//        swap(s1->knapsack[i], s2->knapsack[i]);
-//    }
-//
-//    for(int i = 0; i < s1->amountOfCity; i++){
-//        if(memory1[s1->cities[i]->index] == true){
-//            for(int j = 0; j < s1->amountOfCity; j++){
-//                if(memory1[j] == false){
-//                    memory1[j] = true;
-////                    s1->cities[i]
-//                }
-//            }
-//        }
-//    }
+//    s1->cleanKnapsack();
+//    s1->smartBuildKsnapsack();
+//    s2->cleanKnapsack();
+//    s2->smartBuildKsnapsack();
 }

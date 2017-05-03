@@ -19,29 +19,35 @@ void SearchEngine::Evolve()
     //initial population evaluation. Mutation and crossing
     EvaluatePopulation(0, conf->popSize);
     stable_sort(population, population + conf->popSize, sortPopulationByFitness);
+
     #ifdef stepToStep
         double best;
         int generationsWithoutImprovement = 0;
         best = population[0]->fitness;
     #endif
 
+    doLocalSearch(0, conf->popSize);
+
     for(int it = 1; it < conf->generations; it++)
     {
         //Applies the genetic operators
         Operate();
 
-        //Evaluates new population
-        EvaluatePopulation(conf->popSize, conf->popSize * 2);
+        //Local Search
+        if(it%conf->localSearchWindow == 0)
+            doLocalSearch(conf->popSize, conf->popSize * 2);
+
+//        //Evaluates new population (LocalSearch already evaluates if it is executed)
+//        EvaluatePopulation(conf->popSize, conf->popSize * 2);
 
         //Replaces the population
         replacer->Replace(population);
 
         // free temporary population
-        //#pragma omp parallel for num_threads(conf->MAX_THREADS)
-        for(int i = conf->popSize; i < conf->popSize * 2; i++)
-        {
-            delete population[i];// passar para dentro do replace?
+        for(int i = conf->popSize; i < conf->popSize * 2; i++)        {
+            delete population[i];
         }
+
         #ifdef stepToStep
             if(best < population[0]->fitness){
                 best = population[0]->fitness;
@@ -53,11 +59,9 @@ void SearchEngine::Evolve()
         #endif
 //        if(generationsWithoutImprovement > conf->max_generationsWithoutImprovement)
 //            break;
+
         if(omp_get_wtime() - time_init > conf->MAX_TIME)
             break;
-
-        if(it%conf->localSearchWindow == 0)
-            doLocalSearch();
     }
 
     //Prints the best result in n generations
@@ -67,7 +71,6 @@ void SearchEngine::Evolve()
 
 void SearchEngine::createsInitialPopulation()
 {
-   // cout << "popsize : " << conf->popSize << endl;
     //Creates the initial population
     population = new Individual*[conf->popSize * 2];
 
@@ -124,8 +127,9 @@ void  SearchEngine::Operate()
 
 }
 
-void SearchEngine::doLocalSearch(){
-    for(int i = 0; i < conf->popSize; i++){
+void SearchEngine::doLocalSearch(int initialIndex, int finalIndex){
+    #pragma omp parallel for num_threads(conf->MAX_THREADS)
+    for(int i = initialIndex; i < finalIndex; i++){
         population[i] = localSearch->doLocalSearch(population[i]);
     }
 }

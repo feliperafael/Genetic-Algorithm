@@ -52,7 +52,7 @@ class SearchEngine
         void EvaluatePopulation(int initialIndex, int finalIndex);
         static bool sortPopulationByFitness(Individual* a, Individual* b);
         void createsInitialPopulation();
-        void doLocalSearch();
+        void doLocalSearch(int initialIndex, int finalIndex);
 };
 
 #endif // SEARCHENGINE_H
