@@ -322,7 +322,7 @@
 	<string>
 	"Individual.h"
 
-1493761764 source:/home/joao/2017/GeneticAlgorithm/main.cpp
+1493770375 source:/home/joao/2017/GeneticAlgorithm/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -461,10 +461,10 @@
 	"TravelingThiefIndividual.h"
 	"Mutation.h"
 
-1493760850 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefCrossover.cpp
+1493770375 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefCrossover.cpp
 	"TravelingThiefCrossover.h"
 
-1493747234 /home/joao/2017/GeneticAlgorithm/include/TravelingThiefCrossover.h
+1493769663 /home/joao/2017/GeneticAlgorithm/include/TravelingThiefCrossover.h
 	"TravelingThiefIndividual.h"
 	"Crossover.h"
 
@@ -695,6 +695,6 @@
 1493600151 source:/home/felipe/Documentos/codelobcks/GeneticAlgorithm/GeneticAlgorithm/include/TravelingThiefMutation.cpp
 	"TravelingThiefMutation.h"
 
-1493745164 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefMutation.cpp
+1493769920 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefMutation.cpp
 	"TravelingThiefMutation.h"
 

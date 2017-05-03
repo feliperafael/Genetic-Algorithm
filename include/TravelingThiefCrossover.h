@@ -4,7 +4,7 @@
 #include "TravelingThiefIndividual.h"
 #include "Crossover.h"
 
-class TravelingThiefCrossover : Crossover
+class TravelingThiefCrossover : public Crossover
 {
     public:
         TravelingThiefCrossover();

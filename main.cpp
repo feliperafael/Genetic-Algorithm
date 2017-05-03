@@ -62,7 +62,7 @@ int main(int argc, char * argv[])
     searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
 
     searcher->setMutation(new TravelingThiefMutation());
-//    searcher->setCrossover(new TravelingThiefCrossover());
+////    searcher->setCrossover(new TravelingThiefCrossover());
 
 //    TravelingThiefCrossover* crossover = new TravelingThiefCrossover();
 //

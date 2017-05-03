@@ -24,6 +24,9 @@ void TravelingThiefMutation::cityMutate(TravelingThiefIndividual * individual){
 
     swap(individual->cities[cityA], individual->cities[cityB]);
     swap(individual->knapsack[cityA], individual->knapsack[cityB]);
+
+    individual->cleanKnapsack();
+    individual->smartBuildKsnapsack();
 }
 
 
