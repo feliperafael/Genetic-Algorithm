@@ -1,11 +1,7 @@
 #include "TravelingThiefIndividual.h"
 
 TravelingThiefIndividual::TravelingThiefIndividual(TravelingThiefDatabase *database) {
-//    if(database != NULL)
-//        buildsRoute(database);
 
-//    print();
-//    cin.get();
 }
 
 string TravelingThiefIndividual::nameIndividual() {
@@ -28,7 +24,7 @@ Individual* TravelingThiefIndividual::clone() {
 }
 
 void TravelingThiefIndividual::buildsRoute(TravelingThiefDatabase * database) {
-    //City** c;//Vector of pointers to cities
+
     weightKnapsack = 0;
     amountOfCity = database->DIMENSION;
 
@@ -55,13 +51,11 @@ void TravelingThiefIndividual::buildKsnapsack() {
 
     for(int i = 0; i < amountOfCity; ++i) {
         c = cities[i];
-        //for(int j = 0; j < itemSize; ++j) {
             for(Item * item : c->items) {
                 if(knapsackAcceptsItem(item)) {
                     addOnKnapsack(item);
                 }
             }
-        //}
     }
 }
 
@@ -78,8 +72,6 @@ void TravelingThiefIndividual::smartBuildKsnapsack(){
     }
     sort(auxKnapsack.begin(),auxKnapsack.end(),sortItemsByCostWeight);
 
-
-    //cin.get();
 
     for(Item * item : auxKnapsack) {
         if(knapsackAcceptsItem(item)) {
@@ -104,7 +96,7 @@ bool TravelingThiefIndividual::knapsackAcceptsItem(Item * item) {
 
 void TravelingThiefIndividual::print() {
     bool aux = false;
-//    cout << fitness << " " << weightKnapsack << " " << conf->CAPACITY_OF_KNAPSACK << endl;
+
     cout << fitness << " " << weightKnapsack << " " << distance << " " << conf->seed << " ";
     for(int i = 0; i < amountOfCity; i++){
         cout << "[" << cities[i]->index << " (";
@@ -136,11 +128,11 @@ void TravelingThiefIndividual::buildRouteOfLeastPath(TravelingThiefDatabase * da
     std::sort( cities + 1, cities+amountOfCity, sortCitiesByDistanceCost ); //first city should not be modified
 
     for(int i = 0; i < amountOfCity - 1; ++i) {
-//        cout << i << endl;
+
         int p = i + 1;
         double distanceip = calculateDistance(cities[i], cities[p]);
         for(int j = i+2; j < amountOfCity; j++){
-//        cout << "   " << p << "  " << j << endl;
+
             if(distanceip/cities[p]->getCostBenefit() > calculateDistance(cities[i], cities[j])/cities[j]->getCostBenefit()){
                 if(rand()%100 < 60){
                     p = j;
@@ -150,7 +142,7 @@ void TravelingThiefIndividual::buildRouteOfLeastPath(TravelingThiefDatabase * da
         }
         swap(cities[p], cities[i + 1]);
     }
-//    cin.get();
+
     if(rand()%2==0)
         smartBuildKsnapsack();
     else

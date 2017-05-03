@@ -10,8 +10,8 @@ class SimpleReplacement : public PopulationReplacement
         SimpleReplacement();
 
         /**
-            recebe um população de individuos de tamanho conf->PopSize*2 e deixa os individuos a serem mantidos
-            no intervalo de [0,pop->conf)
+           Receives a population of individuals of size conf-> PopSize * 2 and leaves the individuals to be maintained
+           In the range of [0,pop->conf)
         **/
         virtual void Replace(Individual **pop);
 

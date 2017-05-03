@@ -16,27 +16,23 @@
 #include "TravelingThiefCrossover.h"
 #include "TravelingThiefLocalSearch.h"
 
-
 using namespace std;
 
 int main(int argc, char * argv[])
 {
     double wall_timer = omp_get_wtime();
 
-    clock_t tick;
-    tick = clock();
     int seed = atoi(argv[3]);
 
     if(atoi(argv[3]) == 0)
         seed = time(NULL);
 
     srand(seed);
-    //srand(42);
 
     conf = new Configures(); //Configuration class with several GA parameters
     conf->seed = seed;
     conf->elitism = 0.2; // elitism percentage
-    conf->generations = 10000; // num_max of generations
+    conf->generations = 100000; // num_max of generations
     conf->popSize = 500; // size of population
     conf->crossover = 0.5;  //crossing percentage
     conf->mutate = 1.0; // mutate percentage
@@ -59,19 +55,21 @@ int main(int argc, char * argv[])
     //Define the individual generator that returns an individual type of problem specific
     TravelingThiefIndividualBuilder * travelingThiefIndividualBuilder = new TravelingThiefIndividualBuilder(database);
 
-    SearchEngine * searcher = new SearchEngine();
-    searcher->setParser(travelingthiefparser);
-    searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
-
-    searcher->setMutation(new TravelingThiefMutation());
-
+    //Instantiated a local search
     TravelingThiefLocalSearch* ls = new TravelingThiefLocalSearch();
     ls->setParser(travelingthiefparser);
 
+    // Set searchEngine parameters
+    SearchEngine * searcher = new SearchEngine();
+    searcher->setParser(travelingthiefparser);
+    searcher->setIndividualBuilder(travelingThiefIndividualBuilder);
+    searcher->setMutation(new TravelingThiefMutation());
     searcher->setLocalSearch(ls);
+
+    //Evolves solutions
     searcher->Evolve();
 
-    cout << (omp_get_wtime() - wall_timer) << endl;
+    cout << (omp_get_wtime() - wall_timer) << " s" << endl;
 
     return 0;
 }

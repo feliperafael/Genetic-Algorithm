@@ -5,7 +5,7 @@ TravelingThiefIndividualBuilder::TravelingThiefIndividualBuilder(Database * data
     this->database = dynamic_cast<TravelingThiefDatabase*>(database);
 
     this->database->print();
-    //ctor
+
 }
 
 
@@ -25,5 +25,5 @@ string TravelingThiefIndividualBuilder::nameIndividuo(){
 
 TravelingThiefIndividualBuilder::~TravelingThiefIndividualBuilder()
 {
-    //dtor
+
 }

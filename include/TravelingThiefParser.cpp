@@ -8,7 +8,6 @@ TravelingThiefParser::TravelingThiefParser()
         distanceCities[i] = new double[conf->DIMENSION];
     }
 
-    //ctor
 }
 
 double TravelingThiefParser::Evaluate(Individual* s)
@@ -27,12 +26,8 @@ double TravelingThiefParser::Evaluate(Individual* s)
         for(Item* item : s1->knapsack[i]){
             s1->weightKnapsack += item->weight;
             profit += item->profit;
-            //cout <<  s1->weightKnapsack <<" - " << profit << endl;cin.get();
         }
     }
-//    if(profit - database->RENTING_RATIO * time > 2000){
-//        cout << profit << " - " << database->RENTING_RATIO << " * " << time << endl; cin.get();
-//    }
 
     s1->time = time;
     /// Change the profit name to anything related to value items
@@ -102,5 +97,5 @@ string TravelingThiefParser::nameParser()
 
 TravelingThiefParser::~TravelingThiefParser()
 {
-    //dtor
+
 }

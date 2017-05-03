@@ -2,7 +2,7 @@
 
 TravelingThiefLocalSearch::TravelingThiefLocalSearch()
 {
-    //ctor
+
 }
 
 TravelingThiefIndividual* TravelingThiefLocalSearch::doLocalSearch(Individual* s1){
