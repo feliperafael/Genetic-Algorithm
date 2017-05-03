@@ -14,6 +14,7 @@
 #include "TravelingThiefParser.h"
 #include "TravelingThiefMutation.h"
 #include "TravelingThiefCrossover.h"
+#include "TravelingThiefLocalSearch.h"
 
 
 using namespace std;
@@ -79,7 +80,16 @@ int main(int argc, char * argv[])
 //    s[0]->print();
 //    s[1]->print();
 
-    searcher->Evolve();
+    TravelingThiefIndividual* s = dynamic_cast<TravelingThiefIndividual*>(travelingThiefIndividualBuilder->generateIndividuo());
+    travelingthiefparser->Evaluate(s);
+
+    TravelingThiefLocalSearch* ls = new TravelingThiefLocalSearch();
+    ls->setParser(travelingthiefparser);
+    s->print();
+    ls->doLocalSearch(s);
+    s->print();
+
+//    searcher->Evolve();
 
 
    // cout << "\ntime : " <<  (omp_get_wtime() - wall_timer) << " s" << endl;

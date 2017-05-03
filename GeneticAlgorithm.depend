@@ -281,7 +281,7 @@
 1493760627 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefIndividual.cpp
 	"TravelingThiefIndividual.h"
 
-1493743831 /home/joao/2017/GeneticAlgorithm/include/TravelingThiefIndividual.h
+1493772538 /home/joao/2017/GeneticAlgorithm/include/TravelingThiefIndividual.h
 	<iostream>
 	<stdlib.h>
 	<vector>
@@ -308,7 +308,7 @@
 1493416083 /home/joao/2017/GeneticAlgorithm/src/IndividualBuilder.h
 	"Individual.h"
 
-1493743831 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefParser.cpp
+1493772538 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefParser.cpp
 	"TravelingThiefParser.h"
 
 1493743831 /home/joao/2017/GeneticAlgorithm/include/TravelingThiefParser.h
@@ -322,7 +322,7 @@
 	<string>
 	"Individual.h"
 
-1493770375 source:/home/joao/2017/GeneticAlgorithm/main.cpp
+1493773972 source:/home/joao/2017/GeneticAlgorithm/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -337,6 +337,7 @@
 	"TravelingThiefParser.h"
 	"TravelingThiefMutation.h"
 	"TravelingThiefCrossover.h"
+	"TravelingThiefLocalSearch.h"
 
 1493743831 /home/joao/2017/GeneticAlgorithm/src/SearchEngine.h
 	<omp.h>
@@ -697,4 +698,18 @@
 
 1493769920 source:/home/joao/2017/GeneticAlgorithm/include/TravelingThiefMutation.cpp
 	"TravelingThiefMutation.h"
+
+1493773392 source:/home/joao/2017/GeneticAlgorithm/src/LocalSearch.cpp
+	"LocalSearch.h"
+
+1493773392 /home/joao/2017/GeneticAlgorithm/src/LocalSearch.h
+	"Individual.h"
+	"Parser.h"
+
+1493777938 source:/home/joao/2017/GeneticAlgorithm/src/TravelingThiefLocalSearch.cpp
+	"TravelingThiefLocalSearch.h"
+
+1493777318 /home/joao/2017/GeneticAlgorithm/include/TravelingThiefLocalSearch.h
+	"LocalSearch.h"
+	"TravelingThiefIndividual.h"
 

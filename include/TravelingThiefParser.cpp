@@ -17,8 +17,10 @@ double TravelingThiefParser::Evaluate(Individual* s)
 
     double time = 0, profit = 0, speed = 0, distance = 0;
     s1->weightKnapsack = 0;
+    s1->distance = 0;
     for(int i = 1; i < s1->amountOfCity; ++i){
         distance = calculateDistance(s1->cities[i], s1->cities[i - 1]);
+        s1->distance += distance;
         speed = calculateSpeed(s1);
         time += calculateTime(distance, speed);
 
@@ -32,6 +34,7 @@ double TravelingThiefParser::Evaluate(Individual* s)
 //        cout << profit << " - " << database->RENTING_RATIO << " * " << time << endl; cin.get();
 //    }
 
+    s1->time = time;
     /// Change the profit name to anything related to value items
     return s1->fitness = profit - database->RENTING_RATIO * time;
 }

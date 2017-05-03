@@ -20,6 +20,8 @@ class TravelingThiefIndividual : public Individual
         vector<Item*>* knapsack;
         int amountOfCity;
         double weightKnapsack;
+        double time;
+        double distance;
 
 
         TravelingThiefIndividual(TravelingThiefDatabase * database);

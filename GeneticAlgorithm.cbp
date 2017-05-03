@@ -26,7 +26,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="input/eil51-ttp/eil51_n50_bounded-strongly-corr_01.ttp 180 10" />
+				<Option parameters="input/eil51-ttp/eil51_n50_bounded-strongly-corr_01.ttp 2 10" />
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-fopenmp" />
@@ -55,6 +55,7 @@
 		<Unit filename="include/TravelingThiefIndividual.h" />
 		<Unit filename="include/TravelingThiefIndividualBuilder.cpp" />
 		<Unit filename="include/TravelingThiefIndividualBuilder.h" />
+		<Unit filename="include/TravelingThiefLocalSearch.h" />
 		<Unit filename="include/TravelingThiefMutation.cpp" />
 		<Unit filename="include/TravelingThiefMutation.h" />
 		<Unit filename="include/TravelingThiefParser.cpp" />
@@ -72,6 +73,8 @@
 		<Unit filename="src/IndividualBuilder.h" />
 		<Unit filename="src/IndividualSelector.cpp" />
 		<Unit filename="src/IndividualSelector.h" />
+		<Unit filename="src/LocalSearch.cpp" />
+		<Unit filename="src/LocalSearch.h" />
 		<Unit filename="src/Mutation.cpp" />
 		<Unit filename="src/Mutation.h" />
 		<Unit filename="src/Parser.cpp" />
@@ -122,6 +125,7 @@
 		<Unit filename="src/SimpleReplacement.h">
 			<Option virtualFolder="default_headers/" />
 		</Unit>
+		<Unit filename="src/TravelingThiefLocalSearch.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
