@@ -86,7 +86,7 @@ int main(int argc, char * argv[])
     TravelingThiefLocalSearch* ls = new TravelingThiefLocalSearch();
     ls->setParser(travelingthiefparser);
     s->print();
-    ls->doLocalSearch(s);
+    s = ls->doLocalSearch(s);
     s->print();
 
 //    searcher->Evolve();

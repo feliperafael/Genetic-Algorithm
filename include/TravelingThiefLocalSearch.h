@@ -8,10 +8,10 @@ class TravelingThiefLocalSearch : public LocalSearch
 {
     public:
         TravelingThiefLocalSearch();
-        void doLocalSearch(Individual* s1);
+        TravelingThiefIndividual* doLocalSearch(Individual* s1);
         virtual ~TravelingThiefLocalSearch();
 
-        void TwoOpt(TravelingThiefIndividual * s1_);
+        TravelingThiefIndividual* TwoOpt(TravelingThiefIndividual * s1_);
         void TwoOptSwap(TravelingThiefIndividual* s1, TravelingThiefIndividual* s2, const int& i, const int& k);
 
     protected:

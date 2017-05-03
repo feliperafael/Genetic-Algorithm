@@ -5,12 +5,11 @@ TravelingThiefLocalSearch::TravelingThiefLocalSearch()
     //ctor
 }
 
-void TravelingThiefLocalSearch::doLocalSearch(Individual* s1){
-    TwoOpt(dynamic_cast<TravelingThiefIndividual*>(s1));
-    (dynamic_cast<TravelingThiefIndividual*>(s1))->print();
+TravelingThiefIndividual* TravelingThiefLocalSearch::doLocalSearch(Individual* s1){
+    return TwoOpt(dynamic_cast<TravelingThiefIndividual*>(s1));
 }
 
-void TravelingThiefLocalSearch::TwoOpt(TravelingThiefIndividual* s1)
+TravelingThiefIndividual* TravelingThiefLocalSearch::TwoOpt(TravelingThiefIndividual* s1)
 {
     // Get tour size
     int size = s1->amountOfCity;
@@ -20,7 +19,7 @@ void TravelingThiefLocalSearch::TwoOpt(TravelingThiefIndividual* s1)
 
     TravelingThiefIndividual* s2;
 
-    while (improve == 0){
+    while (improve < 20){
         double best_distance = s1->distance;
 
         for ( int i = 0; i < size - 1; i++ ){
@@ -39,9 +38,10 @@ void TravelingThiefLocalSearch::TwoOpt(TravelingThiefIndividual* s1)
 //                    delete s1;
 
 //                    *s1 = *s2;
-                    TravelingThiefIndividual* aux = s1;
-                    s1 = s2;
-                    s2 = aux;
+//                    TravelingThiefIndividual* aux = s1;
+//                    s1 = s2;
+//                    s2 = aux;
+                    swap(s1, s2);
 //                    delete s2;
                     best_distance = new_distance;
                 }
@@ -54,6 +54,7 @@ void TravelingThiefLocalSearch::TwoOpt(TravelingThiefIndividual* s1)
 //        cin.get();
     }
     s1->print();
+    return s1;
 }
 
 void TravelingThiefLocalSearch::TwoOptSwap(TravelingThiefIndividual* s1, TravelingThiefIndividual* s2, const int& i, const int& k )
