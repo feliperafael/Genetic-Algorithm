@@ -34,6 +34,7 @@ class TravelingThiefIndividual : public Individual
         // functions for TravelingThiefIndividualBuilder
         void buildsRoute(TravelingThiefDatabase * database);
         void buildsRandomRoute(TravelingThiefDatabase * database);
+        void buildsFartherFirstRoute(TravelingThiefDatabase * database);
         void buildKsnapsack();
         void smartBuildKsnapsack();
         void cleanKnapsack();
@@ -42,7 +43,7 @@ class TravelingThiefIndividual : public Individual
         void addOnKnapsack(Item *item);
 
         void buildRouteOfLeastPath(TravelingThiefDatabase * database);
-        static bool sortCitiesByDistanceCost(City* a, City* b);
+
         double calculateDistance(City * a, City * b);
 
 
@@ -50,6 +51,8 @@ class TravelingThiefIndividual : public Individual
 
     private:
         static bool sortItemsByCostWeight(Item* a, Item* b);
+        static bool sortCitiesByDistanceCost(City* a, City* b);
+        static bool sortCitiesByBiggerDistanceCost(City* a, City* b);
 
 };
 

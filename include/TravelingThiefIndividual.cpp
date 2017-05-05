@@ -44,6 +44,44 @@ void TravelingThiefIndividual::buildsRoute(TravelingThiefDatabase * database) {
 
 }
 
+void TravelingThiefIndividual::buildsFartherFirstRoute(TravelingThiefDatabase * database){
+
+ //City** c;//Vector of pointers to cities
+    weightKnapsack = 0;
+    amountOfCity = database->DIMENSION;
+
+    cities = new City*[amountOfCity ];
+
+    for(int i = 0; i < amountOfCity ; ++i) {
+        cities[i] = database->cities.at(i);
+    }
+
+
+    // shuffles the vector
+    std::sort( cities + 1, cities+amountOfCity, sortCitiesByBiggerDistanceCost ); //first city should not be modified
+
+    for(int i = 0; i < amountOfCity - 1; ++i) {
+
+        int p = i + 1;
+        double distanceip = calculateDistance(cities[i], cities[p]);
+        for(int j = i+2; j < amountOfCity; j++){
+
+            if(distanceip/cities[p]->getCostBenefit() > calculateDistance(cities[i], cities[j])/cities[j]->getCostBenefit()){
+                if(rand()%100 < 30){
+                    p = j;
+                    distanceip = calculateDistance(cities[i], cities[j]);
+                }
+            }
+        }
+        swap(cities[p], cities[i + 1]);
+    }
+
+    if(rand()%2==0)
+        smartBuildKsnapsack();
+    else
+        buildKsnapsack();
+}
+
 void TravelingThiefIndividual::buildKsnapsack() {
     City *c;
 
@@ -158,6 +196,12 @@ bool TravelingThiefIndividual::sortCitiesByDistanceCost(City* a, City* b){
         return true;
     return false;
  }
+
+bool TravelingThiefIndividual::sortCitiesByBiggerDistanceCost(City* a, City* b){
+    if(a->getCostBenefit() < b->getCostBenefit())
+        return true;
+    return false;
+}
 
  void TravelingThiefIndividual::cleanKnapsack(){
      weightKnapsack = 0;

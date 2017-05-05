@@ -33,18 +33,23 @@ void SearchEngine::Evolve()
         //Applies the genetic operators
         Operate();
 
-        //Local Search
-        if(it%conf->localSearchWindow == 0)
+        /**
+            Note that the local search already evaluates a solution,
+            not requiring an evaluation when a local search occurs
+        **/
+        ///Local Search
+        if(it%conf->localSearchWindow == 0){
             doLocalSearch(conf->popSize, conf->popSize * 2);
-
-//        //Evaluates new population (LocalSearch already evaluates if it is executed)
-//        EvaluatePopulation(conf->popSize, conf->popSize * 2);
+        }else{
+            //Evaluates new population
+            EvaluatePopulation(conf->popSize, conf->popSize * 2);
+        }
 
         //Replaces the population
         replacer->Replace(population);
 
         // free temporary population
-        for(int i = conf->popSize; i < conf->popSize * 2; i++)        {
+        for(int i = conf->popSize; i < conf->popSize * 2; i++){
             delete population[i];
         }
 

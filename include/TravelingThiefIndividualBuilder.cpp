@@ -11,10 +11,13 @@ TravelingThiefIndividualBuilder::TravelingThiefIndividualBuilder(Database * data
 
 Individual * TravelingThiefIndividualBuilder::generateIndividuo(){
     TravelingThiefIndividual * i = new TravelingThiefIndividual(database);
-    if(rand()%2 == 0)
+    int randomNum = rand();
+    if(randomNum%3 == 0){
         i->buildsRoute(database);
-    else
+    }else if(randomNum%3 == 1)
         i->buildRouteOfLeastPath(database);
+    else
+        i->buildsFartherFirstRoute(database);
     return i;
 }
 
