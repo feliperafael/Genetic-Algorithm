@@ -23,7 +23,7 @@ int main(int argc, char * argv[])
     double wall_timer = omp_get_wtime();
 
     int seed = atoi(argv[3]);
-
+    seed = 42;
     if(atoi(argv[3]) == 0)
         seed = time(NULL);
 
@@ -35,7 +35,7 @@ int main(int argc, char * argv[])
     conf->generations = 100000; // num_max of generations
     conf->popSize = 500; // size of population
     conf->crossover = 0.5;  //crossing percentage
-    conf->mutate = 1.0; // mutate percentage
+    conf->mutate = 0.5; // mutate percentage
     conf->MAX_THREADS = omp_get_max_threads(); // num_max_threads omp
     conf->max_generationsWithoutImprovement = 500;
     conf->MAX_TIME = atoi(argv[2]);

@@ -24,6 +24,7 @@ class TravelingThiefParser : public Parser
     protected:
 
     private:
+        double alphaConstant;
 
         double calculateSpeed(TravelingThiefIndividual * s);
         double calculateProfit(TravelingThiefIndividual * s);
@@ -34,6 +35,7 @@ class TravelingThiefParser : public Parser
 
         void   caculalateDistanceMatrix();
         int    calculateDistanceMatrixIndices(int i, int j);
+
 };
 
 #endif // TRAVELINGTHIEFPARSER_H

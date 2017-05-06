@@ -49,7 +49,7 @@ void SearchEngine::Evolve()
         replacer->Replace(population);
 
         // free temporary population
-        for(int i = conf->popSize; i < conf->popSize * 2; i++){
+        for(int i = conf->popSize; i < conf->popSize * 2; ++i){
             delete population[i];
         }
 
@@ -64,7 +64,7 @@ void SearchEngine::Evolve()
         #endif
 //        if(generationsWithoutImprovement > conf->max_generationsWithoutImprovement)
 //            break;
-
+        cout << it << endl;
         if(omp_get_wtime() - time_init > conf->MAX_TIME)
             break;
     }
@@ -79,7 +79,7 @@ void SearchEngine::createsInitialPopulation()
     //Creates the initial population
     population = new Individual*[conf->popSize * 2];
 
-    for(int i = 0; i < conf->popSize; i++){
+    for(int i = 0; i < conf->popSize; ++i){
         population[i] = individualBuilder->generateIndividuo();
     }
 
@@ -117,13 +117,13 @@ void  SearchEngine::Operate()
         //Applies crossover
         crossoverOperator->cross(selecionados,num_individuos);
 
-        for(int j = 0; j < num_individuos; j++)
+        for(int j = 0; j < num_individuos; ++j)
         {
             //Applies mutation
             mutationOperator->mutate(selecionados[j]);
         }
 
-        for(int j = 0; j < num_individuos; j++)
+        for(int j = 0; j < num_individuos; ++j)
         {
             selecionados[j] = NULL;
         }
