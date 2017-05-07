@@ -1,33 +1,27 @@
 #include "TravelingThiefDatabase.h"
 
-TravelingThiefDatabase::TravelingThiefDatabase()
-{
+TravelingThiefDatabase::TravelingThiefDatabase() {
     //ctor
 }
 
 
-void TravelingThiefDatabase::loadBase(string base_name)
-{
+void TravelingThiefDatabase::loadBase(string base_name) {
     ifstream inputFile;
 
     inputFile.open(base_name.c_str());
 
-    if(!inputFile.is_open())
-    {
+    if(!inputFile.is_open()) {
         cout << "Impossible to open input file, check file path : " << base_name.c_str() << endl;
         exit(1);
-    }
-    else
-    {
-        #ifdef debug
-                cout << base_name << " is opened" << endl;
-        #endif
+    } else {
+#ifdef debug
+        cout << base_name << " is opened" << endl;
+#endif
     }
 
     //data array instance
     values = new double*[registros];
-    for(int i = 0; i < registros; i++)
-    {
+    for(int i = 0; i < registros; i++) {
         values[i] = new double[variaveis];
     }
 
@@ -77,7 +71,7 @@ void TravelingThiefDatabase::loadBase(string base_name)
 
     City* city;
     //reader citys
-    for(int i = 0; i < DIMENSION; ++i){
+    for(int i = 0; i < DIMENSION; ++i) {
         inputFile >> index >> x  >> y;
         city = new City();
         city->setObject(index - 1, x, y);
@@ -90,7 +84,7 @@ void TravelingThiefDatabase::loadBase(string base_name)
     Item* item;
 
     //reader itens
-    for(int i = 0; i < NUMBER_OF_ITEMS; ++i){
+    for(int i = 0; i < NUMBER_OF_ITEMS; ++i) {
         inputFile >> INDEX >> PROFIT >> WEIGHT >> ASSIGNED_NODE_NUMBER;
         item = new Item();
         item->setObject(INDEX - 1, PROFIT, WEIGHT, ASSIGNED_NODE_NUMBER - 1);
@@ -108,7 +102,7 @@ void TravelingThiefDatabase::loadBase(string base_name)
 }
 
 
-void TravelingThiefDatabase::printInstanceHeader(){
+void TravelingThiefDatabase::printInstanceHeader() {
 
     cout << "PROBLEM_NAME :\t\t\t" << PROBLEM_NAME << endl;
     cout << "KNAPSACK_DATA_TYPE :\t\t" << KNAPSACK_DATA_TYPE << endl;
@@ -123,16 +117,13 @@ void TravelingThiefDatabase::printInstanceHeader(){
 
 }
 
-const vector<string> TravelingThiefDatabase::explode(const string& s, const char& c)
-{
+const vector<string> TravelingThiefDatabase::explode(const string& s, const char& c) {
     string buff = "";
     vector<string> v;
 
-    for(char n:s)
-    {
+    for(char n:s) {
         if(n != c) buff+=n;
-        else if(n == c && buff != "")
-        {
+        else if(n == c && buff != "") {
             v.push_back(buff);
             buff = "";
         }
@@ -142,10 +133,12 @@ const vector<string> TravelingThiefDatabase::explode(const string& s, const char
     return v;
 }
 
-string TravelingThiefDatabase::remove_space(string input){input.erase(remove_if(input.begin(), input.end(), ::isspace),input.end()); return input;}
+string TravelingThiefDatabase::remove_space(string input) {
+    input.erase(remove_if(input.begin(), input.end(), ::isspace),input.end());
+    return input;
+}
 
 
-TravelingThiefDatabase::~TravelingThiefDatabase()
-{
+TravelingThiefDatabase::~TravelingThiefDatabase() {
     //dtor
 }

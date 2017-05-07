@@ -1,17 +1,16 @@
 #include "SimpleReplacement.h"
 
-SimpleReplacement::SimpleReplacement()
-{
+SimpleReplacement::SimpleReplacement() {
     //ctor
 }
 
-void SimpleReplacement::Replace(Individual **pop){
+void SimpleReplacement::Replace(Individual **pop) {
     int elitismo = conf->elitism*conf->popSize;
     stable_sort(pop + elitismo, pop + conf->popSize * 2, SortMyPop);
 
     int indice;
 
-    for(int i = elitismo; i < conf->popSize; i++){
+    for(int i = elitismo; i < conf->popSize; i++) {
         indice = conf->popSize + i - elitismo;
         if(pop[i]->fitness < pop[indice]->fitness)
             swap(pop[i], pop[indice]);
@@ -20,12 +19,11 @@ void SimpleReplacement::Replace(Individual **pop){
 
 }
 
-bool SimpleReplacement::SortMyPop(Individual* a, Individual* b){
-            return a->fitness > b->fitness;
+bool SimpleReplacement::SortMyPop(Individual* a, Individual* b) {
+    return a->fitness > b->fitness;
 }
 
 
-SimpleReplacement::~SimpleReplacement()
-{
+SimpleReplacement::~SimpleReplacement() {
     //dtor
 }

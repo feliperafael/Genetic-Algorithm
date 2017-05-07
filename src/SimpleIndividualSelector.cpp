@@ -1,24 +1,20 @@
 #include "SimpleIndividualSelector.h"
 
-SimpleIndividualSelector::SimpleIndividualSelector()
-{
+SimpleIndividualSelector::SimpleIndividualSelector() {
     //ctor
 }
 
-Individual * SimpleIndividualSelector::selects(Individual ** pop)
-{
+Individual * SimpleIndividualSelector::selects(Individual ** pop) {
     Individual * x = pop[rand()%conf->popSize];
     Individual * y = pop[rand()%conf->popSize];
 
-    if(x->fitness > y->fitness)
-    {
+    if(x->fitness > y->fitness) {
         return x;
     }
     return y;
 
 }
 
-SimpleIndividualSelector::~SimpleIndividualSelector()
-{
+SimpleIndividualSelector::~SimpleIndividualSelector() {
     //dtor
 }

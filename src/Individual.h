@@ -6,22 +6,21 @@
 
 using namespace std;
 
-class Individual
-{
-    public:
-        double fitness;
+class Individual {
+  public:
+    double fitness;
 
-        Individual();
+    Individual();
 
-        virtual string nameIndividual() = 0; // print name of individual
-        virtual Individual* clone() = 0;
-        virtual void print() = 0;
+    virtual string nameIndividual() = 0; // print name of individual
+    virtual Individual* clone() = 0;
+    virtual void print() = 0;
 
-        virtual ~Individual();
+    virtual ~Individual();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // INDIVIDUAL_H

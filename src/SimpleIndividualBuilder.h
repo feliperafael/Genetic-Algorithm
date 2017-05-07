@@ -4,18 +4,17 @@
 #include "IndividualBuilder.h"
 #include "SimpleIndividual.h"
 
-class SimpleIndividualBuilder : public IndividualBuilder
-{
-    public:
-        SimpleIndividualBuilder();
-        virtual ~SimpleIndividualBuilder();
-        virtual Individual * generateIndividuo();
-        virtual string nameIndividuo();
+class SimpleIndividualBuilder : public IndividualBuilder {
+  public:
+    SimpleIndividualBuilder();
+    virtual ~SimpleIndividualBuilder();
+    virtual Individual * generateIndividuo();
+    virtual string nameIndividuo();
 
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // SIMPLEINDIVIDUALBUILDER_H

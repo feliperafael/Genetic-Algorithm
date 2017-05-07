@@ -1,16 +1,14 @@
 #include "TravelingThiefCrossover.h"
 
-TravelingThiefCrossover::TravelingThiefCrossover()
-{
+TravelingThiefCrossover::TravelingThiefCrossover() {
     //ctor
 }
 
-TravelingThiefCrossover::~TravelingThiefCrossover()
-{
+TravelingThiefCrossover::~TravelingThiefCrossover() {
     //dtor
 }
 
-void TravelingThiefCrossover::cross(Individual** individuals, int size){
+void TravelingThiefCrossover::cross(Individual** individuals, int size) {
     TravelingThiefIndividual * s1 = dynamic_cast<TravelingThiefIndividual*>(individuals[0]);
     TravelingThiefIndividual * s2 = dynamic_cast<TravelingThiefIndividual*>(individuals[1]);
 
@@ -25,7 +23,7 @@ void TravelingThiefCrossover::cross(Individual** individuals, int size){
     bool memory1[s1->amountOfCity] = {0};
     bool memory2[s1->amountOfCity] = {0};
 
-    for(int i = 0; i < x; i++){
+    for(int i = 0; i < x; i++) {
         original1.push_back(s1->cities[i]);
 
         memory1[s1->cities[i]->index] = 1;
@@ -35,17 +33,17 @@ void TravelingThiefCrossover::cross(Individual** individuals, int size){
         memory2[s2->cities[i]->index] = 1;
     }
 
-    for(int i = x; i < s1->amountOfCity; i++){
+    for(int i = x; i < s1->amountOfCity; i++) {
         original1.push_back(s2->cities[i]);
 
         original2.push_back(s1->cities[i]);
 
     }
 
-    for(int i = x; i < s1->amountOfCity; i++){
-        if(memory1[original1[i]->index] == true){
-            for(int j = 0; j < s1->amountOfCity; j++){
-                if(memory1[s1->cities[j]->index] == false){
+    for(int i = x; i < s1->amountOfCity; i++) {
+        if(memory1[original1[i]->index] == true) {
+            for(int j = 0; j < s1->amountOfCity; j++) {
+                if(memory1[s1->cities[j]->index] == false) {
                     memory1[s1->cities[j]->index] = true;
                     original1[i] = s1->cities[j];
 
@@ -53,9 +51,9 @@ void TravelingThiefCrossover::cross(Individual** individuals, int size){
             }
         }
 
-        if(memory2[original1[i]->index] == true){
-            for(int j = 0; j < s2->amountOfCity; j++){
-                if(memory2[s1->cities[j]->index] == false){
+        if(memory2[original1[i]->index] == true) {
+            for(int j = 0; j < s2->amountOfCity; j++) {
+                if(memory2[s1->cities[j]->index] == false) {
                     memory2[s1->cities[j]->index] = true;
                     original2[i] = s2->cities[j];
 
@@ -64,7 +62,7 @@ void TravelingThiefCrossover::cross(Individual** individuals, int size){
         }
     }
 
-    for(int i = x; i < s1->amountOfCity; i++){
+    for(int i = x; i < s1->amountOfCity; i++) {
         s1->cities[i] = original1[i];
 
         s2->cities[i] = original2[i];

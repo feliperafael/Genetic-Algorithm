@@ -7,20 +7,19 @@
 #include "SimpleIndividual.h"
 
 
-class SimpleParser : public Parser
-{
-    public:
-        Database * database;
-        SimpleParser();
-        virtual ~SimpleParser();
+class SimpleParser : public Parser {
+  public:
+    Database * database;
+    SimpleParser();
+    virtual ~SimpleParser();
 
-        virtual double Evaluate(Individual* s);
-        virtual string nameParser();
-        void setDatabase(Database * data);
+    virtual double Evaluate(Individual* s);
+    virtual string nameParser();
+    void setDatabase(Database * data);
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // SIMPLEPARSER_H

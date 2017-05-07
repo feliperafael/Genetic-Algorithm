@@ -3,16 +3,15 @@
 
 #include "Individual.h"
 
-class Crossover
-{
-    public:
-        Crossover();
-        virtual void cross(Individual ** vec_individuos, int num_individuos) = 0;
-        virtual ~Crossover();
+class Crossover {
+  public:
+    Crossover();
+    virtual void cross(Individual ** vec_individuos, int num_individuos) = 0;
+    virtual ~Crossover();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // CROSSOVER_H

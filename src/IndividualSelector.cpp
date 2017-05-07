@@ -1,11 +1,9 @@
 #include "IndividualSelector.h"
 
-IndividualSelector::IndividualSelector()
-{
+IndividualSelector::IndividualSelector() {
     //ctor
 }
 
-IndividualSelector::~IndividualSelector()
-{
+IndividualSelector::~IndividualSelector() {
     //dtor
 }

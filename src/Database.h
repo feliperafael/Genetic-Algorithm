@@ -6,25 +6,24 @@
 
 using namespace std;
 
-class Database
-{
-    public:
-        double **values;
-        int registros;
-        int variaveis;
-        Database();
+class Database {
+  public:
+    double **values;
+    int registros;
+    int variaveis;
+    Database();
 
-        virtual void loadBase(string base_name);
-        virtual double* getRegister(int position);
+    virtual void loadBase(string base_name);
+    virtual double* getRegister(int position);
 
-        virtual void print();
+    virtual void print();
 
 
-        virtual ~Database();
+    virtual ~Database();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // DATABASE_H

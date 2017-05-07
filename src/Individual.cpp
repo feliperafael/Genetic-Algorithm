@@ -1,12 +1,10 @@
 #include "Individual.h"
 
-Individual::Individual()
-{
+Individual::Individual() {
     //fitness = 0;
     //ctor
 }
 
-Individual::~Individual()
-{
+Individual::~Individual() {
     //dtor
 }

@@ -4,19 +4,18 @@
 #include "Individual.h"
 #include "Parser.h"
 
-class LocalSearch
-{
-    public:
-        LocalSearch();
-        virtual Individual* doLocalSearch(Individual* s1) = 0;
-        virtual ~LocalSearch();
+class LocalSearch {
+  public:
+    LocalSearch();
+    virtual Individual* doLocalSearch(Individual* s1) = 0;
+    virtual ~LocalSearch();
 
-        void setParser(Parser* parser);
+    void setParser(Parser* parser);
 
-        Parser* parser;
-    protected:
+    Parser* parser;
+  protected:
 
-    private:
+  private:
 };
 
 #endif // LOCALSEARCH_H

@@ -6,22 +6,21 @@
 
 using namespace std;
 
-class SimpleIndividual : public Individual
-{
-    public:
-        double x;
-        bool a;
-        SimpleIndividual();
+class SimpleIndividual : public Individual {
+  public:
+    double x;
+    bool a;
+    SimpleIndividual();
 
-        virtual string nameIndividual(); // print name of individual
-        virtual Individual* clone();
-        virtual void print();
+    virtual string nameIndividual(); // print name of individual
+    virtual Individual* clone();
+    virtual void print();
 
-        virtual ~SimpleIndividual();
+    virtual ~SimpleIndividual();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // SIMPLEINDIVIDUAL_H

@@ -2,17 +2,16 @@
 #define INDIVIDUALBUILDER_H
 #include "Individual.h"
 
-class IndividualBuilder
-{
-    public:
-        IndividualBuilder();
-        virtual ~IndividualBuilder();
-        virtual Individual * generateIndividuo() = 0;
-        virtual string nameIndividuo() = 0;
+class IndividualBuilder {
+  public:
+    IndividualBuilder();
+    virtual ~IndividualBuilder();
+    virtual Individual * generateIndividuo() = 0;
+    virtual string nameIndividuo() = 0;
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // INDIVIDUALBUILDER_H

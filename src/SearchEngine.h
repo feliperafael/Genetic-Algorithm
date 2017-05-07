@@ -18,41 +18,41 @@
 #include "SimpleReplacement.h"
 #include "LocalSearch.h"
 
-class SearchEngine
-{
-    public:
-        Individual ** population;
-        IndividualBuilder * individualBuilder;
-        Parser * parser;
-        PopulationReplacement * replacer;
-        Mutation * mutationOperator;
-        Crossover * crossoverOperator;
-        IndividualSelector * individualSelector;
-        LocalSearch * localSearch;
+class SearchEngine {
+  public:
+    Individual ** population;
+    IndividualBuilder * individualBuilder;
+    Parser * parser;
+    PopulationReplacement * replacer;
+    Mutation * mutationOperator;
+    Crossover * crossoverOperator;
+    IndividualSelector * individualSelector;
+    LocalSearch * localSearch;
 
 
-        SearchEngine();
+    SearchEngine();
 
-        void Operate();
-        void Replace();
-        void Evolve();
-        virtual ~SearchEngine();
+    void Operate();
+    void Replace();
+    void Evolve();
+    void decimatePopulation();
+    virtual ~SearchEngine();
 
-        void setCrossover(Crossover * opCrossover);
-        void setMutation(Mutation * opMutation);
-        void setIndividualBuilder(IndividualBuilder * indBuilder);
-        void setPopulationReplace(PopulationReplacement * popReplace);
-        void setParser(Parser * parser);
-        void setSelection(IndividualSelector * seletor);
-        void setLocalSearch(LocalSearch * localSearch);
+    void setCrossover(Crossover * opCrossover);
+    void setMutation(Mutation * opMutation);
+    void setIndividualBuilder(IndividualBuilder * indBuilder);
+    void setPopulationReplace(PopulationReplacement * popReplace);
+    void setParser(Parser * parser);
+    void setSelection(IndividualSelector * seletor);
+    void setLocalSearch(LocalSearch * localSearch);
 
-    protected:
+  protected:
 
-    private:
-        void EvaluatePopulation(int initialIndex, int finalIndex);
-        static bool sortPopulationByFitness(Individual* a, Individual* b);
-        void createsInitialPopulation();
-        void doLocalSearch(int initialIndex, int finalIndex);
+  private:
+    void EvaluatePopulation(int initialIndex, int finalIndex);
+    static bool sortPopulationByFitness(Individual* a, Individual* b);
+    void createsInitialPopulation();
+    void doLocalSearch(int initialIndex, int finalIndex);
 };
 
 #endif // SEARCHENGINE_H

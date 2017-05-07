@@ -1,11 +1,9 @@
 #include "Mutation.h"
 
-Mutation::Mutation()
-{
+Mutation::Mutation() {
     //ctor
 }
 
-Mutation::~Mutation()
-{
+Mutation::~Mutation() {
     //dtor
 }

@@ -1,11 +1,9 @@
 #include "PopulationReplacement.h"
 
-PopulationReplacement::PopulationReplacement()
-{
+PopulationReplacement::PopulationReplacement() {
     //ctor
 }
 
-PopulationReplacement::~PopulationReplacement()
-{
+PopulationReplacement::~PopulationReplacement() {
     //dtor
 }

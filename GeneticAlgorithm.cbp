@@ -26,7 +26,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="input/eil51-ttp/eil51_n50_bounded-strongly-corr_01.ttp 30 0 &gt; output.forninho " />
+				<Option parameters="input/eil51-ttp/eil51_n50_bounded-strongly-corr_01.ttp 180 0" />
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-fopenmp" />

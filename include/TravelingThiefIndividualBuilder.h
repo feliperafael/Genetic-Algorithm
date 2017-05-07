@@ -5,20 +5,19 @@
 #include "TravelingThiefDatabase.h"
 #include "Database.h"
 
-class TravelingThiefIndividualBuilder : public IndividualBuilder
-{
-    public:
-        TravelingThiefDatabase * database;
-        TravelingThiefIndividualBuilder(Database * database);
+class TravelingThiefIndividualBuilder : public IndividualBuilder {
+  public:
+    TravelingThiefDatabase * database;
+    TravelingThiefIndividualBuilder(Database * database);
 
-        Individual * generateIndividuo();
-        string nameIndividuo();
+    Individual * generateIndividuo();
+    string nameIndividuo();
 
-        virtual ~TravelingThiefIndividualBuilder();
+    virtual ~TravelingThiefIndividualBuilder();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // TRAVELINGTHIEFBUILDERINDIVIDUAL_H

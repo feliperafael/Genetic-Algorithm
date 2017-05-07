@@ -1,16 +1,14 @@
 #include "SimpleMutation.h"
 
-SimpleMutation::SimpleMutation()
-{
+SimpleMutation::SimpleMutation() {
     //ctor
 }
 
-void SimpleMutation::mutate(Individual * individuo){
+void SimpleMutation::mutate(Individual * individuo) {
 
 
 }
 
-SimpleMutation::~SimpleMutation()
-{
+SimpleMutation::~SimpleMutation() {
     //dtor
 }

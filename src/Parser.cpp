@@ -1,11 +1,9 @@
 #include "Parser.h"
 
-Parser::Parser()
-{
+Parser::Parser() {
     //ctor
 }
 
-Parser::~Parser()
-{
+Parser::~Parser() {
     //dtor
 }

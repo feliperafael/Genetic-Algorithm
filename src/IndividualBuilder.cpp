@@ -1,11 +1,9 @@
 #include "IndividualBuilder.h"
 
-IndividualBuilder::IndividualBuilder()
-{
+IndividualBuilder::IndividualBuilder() {
     //ctor
 }
 
-IndividualBuilder::~IndividualBuilder()
-{
+IndividualBuilder::~IndividualBuilder() {
     //dtor
 }

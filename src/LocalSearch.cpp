@@ -1,15 +1,13 @@
 #include "LocalSearch.h"
 
-LocalSearch::LocalSearch()
-{
+LocalSearch::LocalSearch() {
     //ctor
 }
 
-void LocalSearch::setParser(Parser* parser){
+void LocalSearch::setParser(Parser* parser) {
     this->parser = parser;
 }
 
-LocalSearch::~LocalSearch()
-{
+LocalSearch::~LocalSearch() {
     //dtor
 }

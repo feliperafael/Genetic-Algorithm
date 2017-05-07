@@ -1,11 +1,10 @@
 #include "SimpleParser.h"
 
-SimpleParser::SimpleParser()
-{
+SimpleParser::SimpleParser() {
     //ctor
 }
 
-double SimpleParser::Evaluate(Individual* s){
+double SimpleParser::Evaluate(Individual* s) {
     //SimpleIndividual * s1 = dynamic_cast<SimpleIndividual*>(s);
     double erro = 0;
     //evaluate
@@ -13,13 +12,12 @@ double SimpleParser::Evaluate(Individual* s){
 
 }
 
-string SimpleParser::nameParser(){
+string SimpleParser::nameParser() {
     return "SimpleParser";
 }
- void SimpleParser::setDatabase(Database * data){
+void SimpleParser::setDatabase(Database * data) {
     database = data;
- }
-SimpleParser::~SimpleParser()
-{
+}
+SimpleParser::~SimpleParser() {
     //dtor
 }

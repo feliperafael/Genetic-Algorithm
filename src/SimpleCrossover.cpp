@@ -1,16 +1,14 @@
 #include "SimpleCrossover.h"
 
-SimpleCrossover::SimpleCrossover()
-{
+SimpleCrossover::SimpleCrossover() {
     //ctor
 }
 
-void SimpleCrossover::cross(Individual ** vec_individuos, int num_individuos){
+void SimpleCrossover::cross(Individual ** vec_individuos, int num_individuos) {
 
 
 }
 
-SimpleCrossover::~SimpleCrossover()
-{
+SimpleCrossover::~SimpleCrossover() {
     //dtor
 }

@@ -4,19 +4,18 @@
 #include <string>
 #include "Individual.h"
 
-class Parser
-{
-    public:
-        Parser();
+class Parser {
+  public:
+    Parser();
 
-	    virtual double Evaluate(Individual* s) = 0;
-        virtual string nameParser() = 0;
+    virtual double Evaluate(Individual* s) = 0;
+    virtual string nameParser() = 0;
 
-        virtual ~Parser();
+    virtual ~Parser();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // PARSER_H

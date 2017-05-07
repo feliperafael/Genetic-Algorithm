@@ -13,34 +13,33 @@
 
 using namespace std;
 
-class TravelingThiefDatabase : public Database
-{
-    public:
-        TravelingThiefDatabase();
-        string PROBLEM_NAME;
-        string KNAPSACK_DATA_TYPE;
-        int DIMENSION;
-        int NUMBER_OF_ITEMS;
-        int CAPACITY_OF_KNAPSACK;
-        double MIN_SPEED;
-        double MAX_SPEED;
-        double RENTING_RATIO;
-        string EDGE_WEIGHT_TYPE;
+class TravelingThiefDatabase : public Database {
+  public:
+    TravelingThiefDatabase();
+    string PROBLEM_NAME;
+    string KNAPSACK_DATA_TYPE;
+    int DIMENSION;
+    int NUMBER_OF_ITEMS;
+    int CAPACITY_OF_KNAPSACK;
+    double MIN_SPEED;
+    double MAX_SPEED;
+    double RENTING_RATIO;
+    string EDGE_WEIGHT_TYPE;
 
-        vector<City*> cities;
+    vector<City*> cities;
 
-        void loadBase(string base_name);
+    void loadBase(string base_name);
 
-        void print(){}
-        void printInstanceHeader();
+    void print() {}
+    void printInstanceHeader();
 
-        virtual ~TravelingThiefDatabase();
+    virtual ~TravelingThiefDatabase();
 
-    protected:
+  protected:
 
-    private:
-        const vector<string> explode(const string& s, const char& c);
-        string remove_space(string input);
+  private:
+    const vector<string> explode(const string& s, const char& c);
+    string remove_space(string input);
 };
 
 #endif // TRAVELINGTHIEFDATABASE_H

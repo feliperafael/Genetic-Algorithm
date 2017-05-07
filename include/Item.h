@@ -5,25 +5,24 @@
 
 using namespace std;
 
-class Item
-{
-    public:
-        int index, city;
-        double profit, weight;
+class Item {
+  public:
+    int index, city;
+    double profit, weight;
 
-        Item();
-        void setObject(int, double, double, int);
-        void setIndex(int index);
-        void setProfit(double Profit);
-        void setWeight(double weight);
-        void setCity(int city);
-        double getCostBenefit();
-        void print();
-        virtual ~Item();
+    Item();
+    void setObject(int, double, double, int);
+    void setIndex(int index);
+    void setProfit(double Profit);
+    void setWeight(double weight);
+    void setCity(int city);
+    double getCostBenefit();
+    void print();
+    virtual ~Item();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // ITEM_H

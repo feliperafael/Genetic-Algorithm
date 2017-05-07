@@ -1,11 +1,9 @@
 #include "Crossover.h"
 
-Crossover::Crossover()
-{
+Crossover::Crossover() {
     //ctor
 }
 
-Crossover::~Crossover()
-{
+Crossover::~Crossover() {
     //dtor
 }

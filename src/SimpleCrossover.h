@@ -6,16 +6,15 @@
 #include "SimpleIndividual.h"
 
 
-class SimpleCrossover : public Crossover
-{
-    public:
-        SimpleCrossover();
-        virtual void cross(Individual ** vec_individuos, int num_individuos);
-        virtual ~SimpleCrossover();
+class SimpleCrossover : public Crossover {
+  public:
+    SimpleCrossover();
+    virtual void cross(Individual ** vec_individuos, int num_individuos);
+    virtual ~SimpleCrossover();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // SIMPLECROSSOVER_H

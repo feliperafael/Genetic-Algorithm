@@ -5,16 +5,15 @@
 #include "Individual.h"
 #include "SimpleIndividual.h"
 
-class SimpleMutation : public Mutation
-{
-    public:
-        SimpleMutation();
-        virtual void mutate(Individual * individuo);
-        virtual ~SimpleMutation();
+class SimpleMutation : public Mutation {
+  public:
+    SimpleMutation();
+    virtual void mutate(Individual * individuo);
+    virtual ~SimpleMutation();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // SIMPLEMUTATION_H

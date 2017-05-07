@@ -13,46 +13,46 @@
 
 using namespace std;
 
-class TravelingThiefIndividual : public Individual
-{
-    public:
-        City ** cities;
-        vector<Item*>* knapsack;
-        int amountOfCity;
-        double weightKnapsack;
-        double time;
-        double distance;
+class TravelingThiefIndividual : public Individual {
+  public:
+    City ** cities;
+    vector<Item*>* knapsack;
+    int amountOfCity;
+    double weightKnapsack;
+    double time;
+    double distance;
 
 
-        TravelingThiefIndividual(TravelingThiefDatabase * database);
+    TravelingThiefIndividual(TravelingThiefDatabase * database);
 
-        string nameIndividual(); // print name of individual
-        Individual* clone();
-        void print();
-        virtual ~TravelingThiefIndividual();
+    string nameIndividual(); // print name of individual
+    Individual* clone();
+    void print();
+    virtual ~TravelingThiefIndividual();
 
-        // functions for TravelingThiefIndividualBuilder
-        void buildsRoute(TravelingThiefDatabase * database);
-        void buildsRandomRoute(TravelingThiefDatabase * database);
-        void buildsFartherFirstRoute(TravelingThiefDatabase * database);
-        void buildKsnapsack();
-        void smartBuildKsnapsack();
-        void cleanKnapsack();
-        bool knapsackAcceptsItem(Item * item);
+    // functions for TravelingThiefIndividualBuilder
+    void buildsRoute(TravelingThiefDatabase * database);
+    void buildsRandomRoute(TravelingThiefDatabase * database);
+    void buildsFartherFirstRoute(TravelingThiefDatabase * database);
+    void buildKsnapsack();
+    void smartBuildKsnapsack();
+    void cleanKnapsack();
+    bool knapsackAcceptsItem(Item * item);
 
-        void addOnKnapsack(Item *item);
+    void addOnKnapsack(Item *item);
 
-        void buildRouteOfLeastPath(TravelingThiefDatabase * database);
+    void buildRouteOfLeastPath(TravelingThiefDatabase * database);
 
-        double calculateDistance(City * a, City * b);
+    double calculateDistance(City * a, City * b);
+    void removeOnKnapsack(int city, int itemIndex);
 
 
-    protected:
+  protected:
 
-    private:
-        static bool sortItemsByCostWeight(Item* a, Item* b);
-        static bool sortCitiesByDistanceCost(City* a, City* b);
-        static bool sortCitiesByBiggerDistanceCost(City* a, City* b);
+  private:
+    static bool sortItemsByCostWeight(Item* a, Item* b);
+    static bool sortCitiesByDistanceCost(City* a, City* b);
+    static bool sortCitiesByBiggerDistanceCost(City* a, City* b);
 
 };
 

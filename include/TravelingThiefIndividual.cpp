@@ -119,8 +119,17 @@ void TravelingThiefIndividual::smartBuildKsnapsack(){
 }
 
 void TravelingThiefIndividual::addOnKnapsack(Item *item){
+
     knapsack[item->city].push_back(item);
     this->weightKnapsack += item->weight;
+}
+
+void TravelingThiefIndividual::removeOnKnapsack(int city, int itemIndex){
+    Item * item = knapsack[city].at(itemIndex);
+    if(item!=NULL){
+        this->weightKnapsack -= item->weight;
+        knapsack[city].erase( knapsack[city].begin() + itemIndex);
+    }
 }
 
 bool TravelingThiefIndividual::knapsackAcceptsItem(Item * item) {
@@ -138,7 +147,7 @@ void TravelingThiefIndividual::print() {
     cout << fitness << " " << weightKnapsack << " " << distance << " " << conf->seed << " ";
     for(int i = 0; i < amountOfCity; i++){
         cout << "[" << cities[i]->index << " (";
-        for(Item* item : knapsack[i]){
+        for(Item* item : cities[i]->items){
             if(knapsack[i].size() > 1 && aux == true){
                 cout << ",";
             }

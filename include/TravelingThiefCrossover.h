@@ -4,16 +4,15 @@
 #include "TravelingThiefIndividual.h"
 #include "Crossover.h"
 
-class TravelingThiefCrossover : public Crossover
-{
-    public:
-        TravelingThiefCrossover();
-        void cross(Individual ** vec_individuos, int num_individuos);
-        virtual ~TravelingThiefCrossover();
+class TravelingThiefCrossover : public Crossover {
+  public:
+    TravelingThiefCrossover();
+    void cross(Individual ** vec_individuos, int num_individuos);
+    virtual ~TravelingThiefCrossover();
 
-    protected:
+  protected:
 
-    private:
+  private:
 };
 
 #endif // TRAVELINGTHIEFCROSSOVER_H
